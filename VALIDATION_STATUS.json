@@ -1,0 +1,38 @@
+{
+  "candidate_status": "SOURCE_EXPERIMENT_NOT_FURIOSA_COMPILED_NOT_DEVICE_TESTED",
+  "date": "2026-09-16",
+  "host_checks": {
+    "result": "PASS",
+    "command": "python3 validate_local.py",
+    "scope": [
+      "Control and v5 source hashes match uploaded compiler report",
+      "Original fixture SHA256 preserved",
+      "Source arithmetic-body identity after normalization of row-batch size",
+      "Complete disjoint output-row coverage, including tails",
+      "Source-level transpose lane coverage for row batches",
+      "Individual scale VRF tensor byte count only, not total compiler allocation",
+      "Uploaded schedule dependency analysis confirms 3 versus 40 LUT setup pairs"
+    ]
+  },
+  "mock_infrastructure_checks": {
+    "result": "PASS",
+    "scope": [
+      "Fresh isolated project for each candidate",
+      "Exactly three staged files and preserved fixture",
+      "Source checksum and candidate markers",
+      "Missing executable or compiler error cannot stage an upload",
+      "Schedule-only mode does not stage binaries",
+      "Mixed or failed benchmark logs rejected"
+    ],
+    "warning": "Fake compiler and fake logs were used only to test runner behavior; they are not benchmark results. Temporary mock outputs are not shipped."
+  },
+  "furiosa_compilation": "NOT_RUN: compiler not available in assistant environment",
+  "hardware_correctness": "NOT_RUN: no RNGD connection",
+  "hardware_performance": "NOT_RUN",
+  "predicted_source_lut_calls": {
+    "ffn-batch8x16": 24,
+    "ffn-batch8x12": 26
+  },
+  "predictions_are_measurements": false,
+  "acceptance": "Keep candidate only after original tests pass on RNGD and repeated per-kernel medians improve relative to hybrid-control."
+}

@@ -1,0 +1,14 @@
+{
+  "hybrid-control": [
+    "src/device/sliding/projection.rs"
+  ],
+  "ffn-batch8x16": [
+    "src/device/sliding/projection.rs",
+    "src/device/shared/mlp.rs"
+  ],
+  "ffn-batch8x12": [
+    "src/device/sliding/projection.rs",
+    "src/device/shared/mlp.rs"
+  ],
+  "v3-control": []
+}
