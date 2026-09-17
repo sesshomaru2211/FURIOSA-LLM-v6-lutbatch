@@ -1,0 +1,1 @@
+{"rustc":9130907117175453446,"features":"[]","declared_features":"[]","target":9246297755386574119,"profile":4643261890205713186,"path":8222997505232110764,"deps":[],"local":[{"CheckDepInfo":{"dep_info":"release/.fingerprint/pastey-a7b7f9dfa9e9e096/dep-lib-pastey","checksum":false}}],"rustflags":["--cfg=backend=\"npu\""],"config":8247474407144887393,"compile_kind":0}

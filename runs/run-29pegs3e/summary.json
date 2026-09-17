@@ -1,0 +1,60 @@
+[
+  {
+    "candidate": "hybrid-control",
+    "status": "BUILT_NOT_DEVICE_TESTED",
+    "hardware_status": "NOT_RUN",
+    "schedules": {
+      "sliding_project_qkv": {
+        "makespan": 75209,
+        "instructions": 124,
+        "delta_percent_vs_control": 0.0
+      },
+      "sliding_attention_output": {
+        "makespan": 54418,
+        "instructions": 134,
+        "delta_percent_vs_control": 0.0
+      },
+      "decoder_feedforward": {
+        "makespan": 504130,
+        "instructions": 634,
+        "delta_percent_vs_control": 0.0
+      }
+    },
+    "source_sha256": "4811722767e9b9e0059a7c71cb8dae238ad55feaa18c16b911cbfb42f82b1729",
+    "upload_directory": "/home/thanh/FURIOSA-LLM-v6-lutbatch/runs/run-29pegs3e/upload-hybrid-control",
+    "upload_sha256": {
+      "fixtures.safetensors": "cb288f25808150d8aa9fbf653bf1e65237e84b2a9b7d6674f6ff33ba07cb4461",
+      "remote_entrypoint.sh": "b9f3e9cecac32ae46468dc9ad2d2b4726f3727ef1283890bf5cda10c43efc861",
+      "test_runtime": "76e7ffd5d6826fc2c02e44946c08caa37caf06a15823713af659f7d12c5e5379"
+    }
+  },
+  {
+    "candidate": "ffn-batch8x16",
+    "status": "BUILT_NOT_DEVICE_TESTED",
+    "hardware_status": "NOT_RUN",
+    "schedules": {
+      "sliding_project_qkv": {
+        "makespan": 75209,
+        "instructions": 124,
+        "delta_percent_vs_control": 0.0
+      },
+      "sliding_attention_output": {
+        "makespan": 54418,
+        "instructions": 134,
+        "delta_percent_vs_control": 0.0
+      },
+      "decoder_feedforward": {
+        "makespan": 479590,
+        "instructions": 478,
+        "delta_percent_vs_control": -4.867792037768037
+      }
+    },
+    "source_sha256": "1c926b341d200a94707750056f01deaa072eb6a1c19d4545046e27a211657021",
+    "upload_directory": "/home/thanh/FURIOSA-LLM-v6-lutbatch/runs/run-29pegs3e/upload-ffn-batch8x16",
+    "upload_sha256": {
+      "fixtures.safetensors": "cb288f25808150d8aa9fbf653bf1e65237e84b2a9b7d6674f6ff33ba07cb4461",
+      "remote_entrypoint.sh": "5db13b477d07eb4f7bafa886523f533c179a0544fbc5ca03d76e0f9341fda837",
+      "test_runtime": "df6f9c551eb696f4bee8faa3afa39ee805c86f0ecb26ced1c9a6edd07e520219"
+    }
+  }
+]

@@ -1,0 +1,10 @@
+/home/thanh/FURIOSA-LLM-v6-lutbatch/runs/run-t97b561u/projects/ffn-batch8x16/target/plugin-nightly-2026-05-01/debug/deps/furiosa_mapping_macro-1cc614c32b4823a0.d: /home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/furiosa-mapping-macro-0.6.0/src/lib.rs /home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/furiosa-mapping-macro-0.6.0/src/parser/mod.rs /home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/furiosa-mapping-macro-0.6.0/src/parser/lexer.rs /home/thanh/FURIOSA-LLM-v6-lutbatch/runs/run-t97b561u/projects/ffn-batch8x16/target/plugin-nightly-2026-05-01/debug/build/furiosa-mapping-macro-35c685831af2d46b/out/parser/parser.rs
+
+/home/thanh/FURIOSA-LLM-v6-lutbatch/runs/run-t97b561u/projects/ffn-batch8x16/target/plugin-nightly-2026-05-01/debug/deps/libfuriosa_mapping_macro-1cc614c32b4823a0.so: /home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/furiosa-mapping-macro-0.6.0/src/lib.rs /home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/furiosa-mapping-macro-0.6.0/src/parser/mod.rs /home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/furiosa-mapping-macro-0.6.0/src/parser/lexer.rs /home/thanh/FURIOSA-LLM-v6-lutbatch/runs/run-t97b561u/projects/ffn-batch8x16/target/plugin-nightly-2026-05-01/debug/build/furiosa-mapping-macro-35c685831af2d46b/out/parser/parser.rs
+
+/home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/furiosa-mapping-macro-0.6.0/src/lib.rs:
+/home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/furiosa-mapping-macro-0.6.0/src/parser/mod.rs:
+/home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/furiosa-mapping-macro-0.6.0/src/parser/lexer.rs:
+/home/thanh/FURIOSA-LLM-v6-lutbatch/runs/run-t97b561u/projects/ffn-batch8x16/target/plugin-nightly-2026-05-01/debug/build/furiosa-mapping-macro-35c685831af2d46b/out/parser/parser.rs:
+
+# env-dep:OUT_DIR=/home/thanh/FURIOSA-LLM-v6-lutbatch/runs/run-t97b561u/projects/ffn-batch8x16/target/plugin-nightly-2026-05-01/debug/build/furiosa-mapping-macro-35c685831af2d46b/out

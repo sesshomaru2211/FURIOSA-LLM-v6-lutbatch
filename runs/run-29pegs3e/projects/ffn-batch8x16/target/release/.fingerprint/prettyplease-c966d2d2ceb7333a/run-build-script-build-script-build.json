@@ -1,0 +1,1 @@
+{"rustc":9130907117175453446,"features":"","declared_features":"","target":0,"profile":0,"path":0,"deps":[[9423015880379144908,"build_script_build",false,11551317364332577402]],"local":[{"RerunIfChanged":{"output":"release/build/prettyplease-c966d2d2ceb7333a/output","paths":["build.rs"]}}],"rustflags":["--cfg=backend=\"npu\""],"config":0,"compile_kind":0}

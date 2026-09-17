@@ -1,0 +1,48 @@
+[
+  {
+    "candidate": "hybrid-control",
+    "status": "SCHEDULE_OK",
+    "hardware_status": "NOT_RUN",
+    "schedules": {
+      "sliding_project_qkv": {
+        "makespan": 75209,
+        "instructions": 124,
+        "delta_percent_vs_control": 0.0
+      },
+      "sliding_attention_output": {
+        "makespan": 54418,
+        "instructions": 134,
+        "delta_percent_vs_control": 0.0
+      },
+      "decoder_feedforward": {
+        "makespan": 504130,
+        "instructions": 634,
+        "delta_percent_vs_control": 0.0
+      }
+    },
+    "source_sha256": "4811722767e9b9e0059a7c71cb8dae238ad55feaa18c16b911cbfb42f82b1729"
+  },
+  {
+    "candidate": "ffn-batch8x16",
+    "status": "SCHEDULE_OK",
+    "hardware_status": "NOT_RUN",
+    "schedules": {
+      "sliding_project_qkv": {
+        "makespan": 75209,
+        "instructions": 124,
+        "delta_percent_vs_control": 0.0
+      },
+      "sliding_attention_output": {
+        "makespan": 54418,
+        "instructions": 134,
+        "delta_percent_vs_control": 0.0
+      },
+      "decoder_feedforward": {
+        "makespan": 479590,
+        "instructions": 478,
+        "delta_percent_vs_control": -4.867792037768037
+      }
+    },
+    "source_sha256": "1c926b341d200a94707750056f01deaa072eb6a1c19d4545046e27a211657021"
+  }
+]

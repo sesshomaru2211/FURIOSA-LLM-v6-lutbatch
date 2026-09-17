@@ -1,0 +1,1 @@
+{"rustc":9130907117175453446,"features":"[]","declared_features":"[]","target":1524667692659508025,"profile":16612459727631014315,"path":9384529844526706384,"deps":[],"local":[{"CheckDepInfo":{"dep_info":"release/.fingerprint/equivalent-a1b661b9a6259490/dep-lib-equivalent","checksum":false}}],"rustflags":["--cfg=backend=\"npu\""],"config":8247474407144887393,"compile_kind":0}

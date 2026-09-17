@@ -1,0 +1,8 @@
+/home/thanh/FURIOSA-LLM-v6-lutbatch/runs/run-t97b561u/projects/ffn-batch8x16/target/plugin-nightly-2026-05-01/debug/deps/paste-42499db0cd790398.d: /home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/paste-1.0.15/src/lib.rs /home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/paste-1.0.15/src/attr.rs /home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/paste-1.0.15/src/error.rs /home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/paste-1.0.15/src/segment.rs
+
+/home/thanh/FURIOSA-LLM-v6-lutbatch/runs/run-t97b561u/projects/ffn-batch8x16/target/plugin-nightly-2026-05-01/debug/deps/libpaste-42499db0cd790398.so: /home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/paste-1.0.15/src/lib.rs /home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/paste-1.0.15/src/attr.rs /home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/paste-1.0.15/src/error.rs /home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/paste-1.0.15/src/segment.rs
+
+/home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/paste-1.0.15/src/lib.rs:
+/home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/paste-1.0.15/src/attr.rs:
+/home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/paste-1.0.15/src/error.rs:
+/home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/paste-1.0.15/src/segment.rs:

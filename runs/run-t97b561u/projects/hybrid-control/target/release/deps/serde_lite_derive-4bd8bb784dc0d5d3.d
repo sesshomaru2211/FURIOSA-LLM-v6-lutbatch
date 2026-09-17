@@ -1,0 +1,9 @@
+/home/thanh/FURIOSA-LLM-v6-lutbatch/runs/run-t97b561u/projects/hybrid-control/target/release/deps/serde_lite_derive-4bd8bb784dc0d5d3.d: /home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-lite-derive-0.5.1/src/lib.rs /home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-lite-derive-0.5.1/src/attributes.rs /home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-lite-derive-0.5.1/src/deserialize.rs /home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-lite-derive-0.5.1/src/serialize.rs /home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-lite-derive-0.5.1/src/update.rs
+
+/home/thanh/FURIOSA-LLM-v6-lutbatch/runs/run-t97b561u/projects/hybrid-control/target/release/deps/libserde_lite_derive-4bd8bb784dc0d5d3.so: /home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-lite-derive-0.5.1/src/lib.rs /home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-lite-derive-0.5.1/src/attributes.rs /home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-lite-derive-0.5.1/src/deserialize.rs /home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-lite-derive-0.5.1/src/serialize.rs /home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-lite-derive-0.5.1/src/update.rs
+
+/home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-lite-derive-0.5.1/src/lib.rs:
+/home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-lite-derive-0.5.1/src/attributes.rs:
+/home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-lite-derive-0.5.1/src/deserialize.rs:
+/home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-lite-derive-0.5.1/src/serialize.rs:
+/home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-lite-derive-0.5.1/src/update.rs:

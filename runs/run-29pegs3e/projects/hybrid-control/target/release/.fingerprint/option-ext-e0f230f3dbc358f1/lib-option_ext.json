@@ -1,0 +1,1 @@
+{"rustc":9130907117175453446,"features":"[]","declared_features":"[]","target":17153617223804709240,"profile":16612459727631014315,"path":12762181461535258391,"deps":[],"local":[{"CheckDepInfo":{"dep_info":"release/.fingerprint/option-ext-e0f230f3dbc358f1/dep-lib-option_ext","checksum":false}}],"rustflags":["--cfg=backend=\"npu\""],"config":8247474407144887393,"compile_kind":0}

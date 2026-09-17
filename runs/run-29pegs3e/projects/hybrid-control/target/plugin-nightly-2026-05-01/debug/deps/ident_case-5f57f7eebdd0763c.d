@@ -1,0 +1,7 @@
+/home/thanh/FURIOSA-LLM-v6-lutbatch/runs/run-29pegs3e/projects/hybrid-control/target/plugin-nightly-2026-05-01/debug/deps/ident_case-5f57f7eebdd0763c.d: /home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ident_case-1.0.1/src/lib.rs
+
+/home/thanh/FURIOSA-LLM-v6-lutbatch/runs/run-29pegs3e/projects/hybrid-control/target/plugin-nightly-2026-05-01/debug/deps/libident_case-5f57f7eebdd0763c.rlib: /home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ident_case-1.0.1/src/lib.rs
+
+/home/thanh/FURIOSA-LLM-v6-lutbatch/runs/run-29pegs3e/projects/hybrid-control/target/plugin-nightly-2026-05-01/debug/deps/libident_case-5f57f7eebdd0763c.rmeta: /home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ident_case-1.0.1/src/lib.rs
+
+/home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ident_case-1.0.1/src/lib.rs:

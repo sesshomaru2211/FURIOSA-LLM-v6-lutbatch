@@ -1,0 +1,1 @@
+{"rustc":9130907117175453446,"features":"","declared_features":"","target":0,"profile":0,"path":0,"deps":[[17605717126308396068,"build_script_build",false,18016585417388730372]],"local":[{"RerunIfChanged":{"output":"release/build/paste-335e9d1ed47f8ae5/output","paths":["build.rs"]}}],"rustflags":["--cfg=backend=\"npu\""],"config":0,"compile_kind":0}

@@ -1,0 +1,57 @@
+--- a/src/device/sliding/projection.rs
++++ b/src/device/sliding/projection.rs
+@@ -206,18 +206,40 @@
+ ) -> DmTensor<bf16, Chip, Cluster, HiddenRows, m![H % 60]> {
+     let scale: DmTensor<bf16, Chip, Cluster, HiddenRows, m![H % 60]> = weight_scale.to_dm(&mut ctx.tdma);
+     let mut output: DmTensor<bf16, Chip, Cluster, HiddenRows, m![H % 60]> = DmTensor::new();
+-    // Four-row packets preserve 8-byte alignment without padding the 60-row
+-    // partition, whose length is not divisible by the f32 flit size of eight.
+-    for i in 0..15 {
++    // Process 56 valid channels in full f32 flits; retain the four-channel tail.
++    {
++        let scale_vrf: VrfTensor<f32, Chip, Cluster, HiddenRows, m![H % 60 = 56]> = ctx
++            .sub
++            .begin(scale.view().tile::<m![H % 60], 56, m![H % 60 = 56 # 60]>(0))
++            .fetch::<m![1], m![H % 60 = 56]>()
++            .fetch_cast::<f32>()
++            .collect::<m![H % 60 = 56 / 8], m![H % 60 = 56 % 8]>()
++            .to_vrf();
++        ctx.main
++            .begin(x.view().tile::<m![H % 60], 56, m![H % 60 = 56 # 60]>(0))
++            .fetch::<m![1], m![H % 60 = 56]>()
++            .fetch_cast::<f32>()
++            .collect::<m![H % 60 = 56 / 8], m![H % 60 = 56 % 8]>()
++            .vector_init()
++            .vector_intra_slice_tag(TagMode::Zero)
++            .vector_narrow_split::<m![H % 60 = 56 / 4], m![H % 60 = 56 % 4]>()
++            .vector_fp_binary(FpBinaryOp::MulF(FpMulAlu::Mul0), &scale_vrf)
++            .vector_widen_concat::<m![H % 60 = 56 / 8], m![H % 60 = 56 % 8]>()
++            .vector_final()
++            .cast::<bf16, m![H % 60 = 56 % 8 # 16]>()
++            .commit_trim::<m![H % 60 = 56 % 8]>()
++            .commit_view(output.view_mut().tile::<m![H % 60], 56, m![H % 60 = 56 #{!} 60]>(0));
++    }
++    {
+         let scale_vrf: VrfTensor<f32, Chip, Cluster, HiddenRows, m![H % 60 = 4 # 8]> = ctx
+             .sub
+-            .begin(scale.view().tile::<m![H % 60], 4, m![H % 60 = 4 # 60]>(4 * i))
++            .begin(scale.view().tile::<m![H % 60], 4, m![H % 60 = 4 # 60]>(56))
+             .fetch::<m![1], m![H % 60 = 4]>()
+             .fetch_cast::<f32>()
+             .collect::<m![1], m![H % 60 = 4 # 8]>()
+             .to_vrf();
+         ctx.main
+-            .begin(x.view().tile::<m![H % 60], 4, m![H % 60 = 4 # 60]>(4 * i))
++            .begin(x.view().tile::<m![H % 60], 4, m![H % 60 = 4 # 60]>(56))
+             .fetch::<m![1], m![H % 60 = 4]>()
+             .fetch_cast::<f32>()
+             .collect::<m![1], m![H % 60 = 4 # 8]>()
+@@ -229,7 +251,7 @@
+             .vector_final()
+             .cast::<bf16, m![H % 60 = 4 # 16]>()
+             .commit_trim::<m![H % 60 = 4]>()
+-            .commit_view(output.view_mut().tile::<m![H % 60], 4, m![H % 60 = 4 #{!} 60]>(4 * i));
++            .commit_view(output.view_mut().tile::<m![H % 60], 4, m![H % 60 = 4 #{!} 60]>(56));
+     }
+     output
+ }

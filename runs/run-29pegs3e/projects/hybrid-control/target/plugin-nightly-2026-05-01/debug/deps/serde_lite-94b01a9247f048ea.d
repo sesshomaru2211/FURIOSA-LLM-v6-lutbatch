@@ -1,0 +1,10 @@
+/home/thanh/FURIOSA-LLM-v6-lutbatch/runs/run-29pegs3e/projects/hybrid-control/target/plugin-nightly-2026-05-01/debug/deps/serde_lite-94b01a9247f048ea.d: /home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-lite-0.5.1/src/lib.rs /home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-lite-0.5.1/src/deserialize.rs /home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-lite-0.5.1/src/intermediate.rs /home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-lite-0.5.1/src/map.rs /home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-lite-0.5.1/src/serialize.rs /home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-lite-0.5.1/src/update.rs
+
+/home/thanh/FURIOSA-LLM-v6-lutbatch/runs/run-29pegs3e/projects/hybrid-control/target/plugin-nightly-2026-05-01/debug/deps/libserde_lite-94b01a9247f048ea.rmeta: /home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-lite-0.5.1/src/lib.rs /home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-lite-0.5.1/src/deserialize.rs /home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-lite-0.5.1/src/intermediate.rs /home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-lite-0.5.1/src/map.rs /home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-lite-0.5.1/src/serialize.rs /home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-lite-0.5.1/src/update.rs
+
+/home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-lite-0.5.1/src/lib.rs:
+/home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-lite-0.5.1/src/deserialize.rs:
+/home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-lite-0.5.1/src/intermediate.rs:
+/home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-lite-0.5.1/src/map.rs:
+/home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-lite-0.5.1/src/serialize.rs:
+/home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-lite-0.5.1/src/update.rs:

@@ -1,0 +1,13 @@
+/home/thanh/FURIOSA-LLM-v6-lutbatch/runs/run-t97b561u/projects/ffn-batch8x16/target/plugin-nightly-2026-05-01/debug/deps/thiserror-2ddff35e11c62a69.d: /home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.20/src/lib.rs /home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.20/src/aserror.rs /home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.20/src/display.rs /home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.20/src/provide.rs /home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.20/src/var.rs /home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.20/src/private.rs /home/thanh/FURIOSA-LLM-v6-lutbatch/runs/run-t97b561u/projects/ffn-batch8x16/target/plugin-nightly-2026-05-01/debug/build/thiserror-02ac0550f440fdb5/out/private.rs
+
+/home/thanh/FURIOSA-LLM-v6-lutbatch/runs/run-t97b561u/projects/ffn-batch8x16/target/plugin-nightly-2026-05-01/debug/deps/libthiserror-2ddff35e11c62a69.rmeta: /home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.20/src/lib.rs /home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.20/src/aserror.rs /home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.20/src/display.rs /home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.20/src/provide.rs /home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.20/src/var.rs /home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.20/src/private.rs /home/thanh/FURIOSA-LLM-v6-lutbatch/runs/run-t97b561u/projects/ffn-batch8x16/target/plugin-nightly-2026-05-01/debug/build/thiserror-02ac0550f440fdb5/out/private.rs
+
+/home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.20/src/lib.rs:
+/home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.20/src/aserror.rs:
+/home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.20/src/display.rs:
+/home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.20/src/provide.rs:
+/home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.20/src/var.rs:
+/home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.20/src/private.rs:
+/home/thanh/FURIOSA-LLM-v6-lutbatch/runs/run-t97b561u/projects/ffn-batch8x16/target/plugin-nightly-2026-05-01/debug/build/thiserror-02ac0550f440fdb5/out/private.rs:
+
+# env-dep:OUT_DIR=/home/thanh/FURIOSA-LLM-v6-lutbatch/runs/run-t97b561u/projects/ffn-batch8x16/target/plugin-nightly-2026-05-01/debug/build/thiserror-02ac0550f440fdb5/out

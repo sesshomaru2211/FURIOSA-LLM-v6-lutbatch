@@ -1,0 +1,7 @@
+/home/thanh/FURIOSA-LLM-v6-lutbatch/runs/run-s2xjr4vk/projects/hybrid-control/target/plugin-nightly-2026-05-01/debug/deps/scopeguard-5e7de99b9a98fe2d.d: /home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/scopeguard-1.2.0/src/lib.rs
+
+/home/thanh/FURIOSA-LLM-v6-lutbatch/runs/run-s2xjr4vk/projects/hybrid-control/target/plugin-nightly-2026-05-01/debug/deps/libscopeguard-5e7de99b9a98fe2d.rlib: /home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/scopeguard-1.2.0/src/lib.rs
+
+/home/thanh/FURIOSA-LLM-v6-lutbatch/runs/run-s2xjr4vk/projects/hybrid-control/target/plugin-nightly-2026-05-01/debug/deps/libscopeguard-5e7de99b9a98fe2d.rmeta: /home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/scopeguard-1.2.0/src/lib.rs
+
+/home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/scopeguard-1.2.0/src/lib.rs:

@@ -1,0 +1,9 @@
+/home/thanh/FURIOSA-LLM-v6-lutbatch/runs/run-s2xjr4vk/projects/ffn-batch8x16/target/plugin-nightly-2026-05-01/debug/deps/tstr_proc_macros-3a99a1b450c9ddce.d: /home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tstr_proc_macros-0.2.2/src/lib.rs /home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tstr_proc_macros-0.2.2/src/non_syn_parsing.rs /home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tstr_proc_macros-0.2.2/src/nested_tuple_compute.rs /home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tstr_proc_macros-0.2.2/src/utils.rs /home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tstr_proc_macros-0.2.2/src/no_const_generics.rs
+
+/home/thanh/FURIOSA-LLM-v6-lutbatch/runs/run-s2xjr4vk/projects/ffn-batch8x16/target/plugin-nightly-2026-05-01/debug/deps/libtstr_proc_macros-3a99a1b450c9ddce.so: /home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tstr_proc_macros-0.2.2/src/lib.rs /home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tstr_proc_macros-0.2.2/src/non_syn_parsing.rs /home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tstr_proc_macros-0.2.2/src/nested_tuple_compute.rs /home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tstr_proc_macros-0.2.2/src/utils.rs /home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tstr_proc_macros-0.2.2/src/no_const_generics.rs
+
+/home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tstr_proc_macros-0.2.2/src/lib.rs:
+/home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tstr_proc_macros-0.2.2/src/non_syn_parsing.rs:
+/home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tstr_proc_macros-0.2.2/src/nested_tuple_compute.rs:
+/home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tstr_proc_macros-0.2.2/src/utils.rs:
+/home/thanh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tstr_proc_macros-0.2.2/src/no_const_generics.rs:

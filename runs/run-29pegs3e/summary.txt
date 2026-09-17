@@ -1,0 +1,19 @@
+V6 LUT-batching experiments — STATIC SCHEDULES, not device measurements.
+Control: QKV v3 + attention v5 + FFN v3.
+
+hybrid-control: BUILT_NOT_DEVICE_TESTED
+  sliding_project_qkv: 75209 cycles, 124 instructions (+0.00% vs control)
+  sliding_attention_output: 54418 cycles, 134 instructions (+0.00% vs control)
+  decoder_feedforward: 504130 cycles, 634 instructions (+0.00% vs control)
+  Upload 3 files from: /home/thanh/FURIOSA-LLM-v6-lutbatch/runs/run-29pegs3e/upload-hybrid-control
+ffn-batch8x16: BUILT_NOT_DEVICE_TESTED
+  sliding_project_qkv: 75209 cycles, 124 instructions (+0.00% vs control)
+  sliding_attention_output: 54418 cycles, 134 instructions (+0.00% vs control)
+  decoder_feedforward: 479590 cycles, 478 instructions (-4.87% vs control)
+  Upload 3 files from: /home/thanh/FURIOSA-LLM-v6-lutbatch/runs/run-29pegs3e/upload-ffn-batch8x16
+
+These results do not establish device correctness or speedup.
+RNGD: remote_entrypoint.sh | timeout 70 | Args empty | TUC_PROFILE_LEVEL=info
+Compare at least 3 complete PASS logs per candidate, against hybrid-control.
+If batch8x16 fails, optional fallback: bash run_all.sh --candidate ffn-batch8x12
+Keep hybrid-control unless the candidate passes the original tests and improves device medians.

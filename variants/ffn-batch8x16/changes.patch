@@ -1,0 +1,425 @@
+--- a/src/device/sliding/projection.rs
++++ b/src/device/sliding/projection.rs
+@@ -206,18 +206,40 @@
+ ) -> DmTensor<bf16, Chip, Cluster, HiddenRows, m![H % 60]> {
+     let scale: DmTensor<bf16, Chip, Cluster, HiddenRows, m![H % 60]> = weight_scale.to_dm(&mut ctx.tdma);
+     let mut output: DmTensor<bf16, Chip, Cluster, HiddenRows, m![H % 60]> = DmTensor::new();
+-    // Four-row packets preserve 8-byte alignment without padding the 60-row
+-    // partition, whose length is not divisible by the f32 flit size of eight.
+-    for i in 0..15 {
++    // Process 56 valid channels in full f32 flits; retain the four-channel tail.
++    {
++        let scale_vrf: VrfTensor<f32, Chip, Cluster, HiddenRows, m![H % 60 = 56]> = ctx
++            .sub
++            .begin(scale.view().tile::<m![H % 60], 56, m![H % 60 = 56 # 60]>(0))
++            .fetch::<m![1], m![H % 60 = 56]>()
++            .fetch_cast::<f32>()
++            .collect::<m![H % 60 = 56 / 8], m![H % 60 = 56 % 8]>()
++            .to_vrf();
++        ctx.main
++            .begin(x.view().tile::<m![H % 60], 56, m![H % 60 = 56 # 60]>(0))
++            .fetch::<m![1], m![H % 60 = 56]>()
++            .fetch_cast::<f32>()
++            .collect::<m![H % 60 = 56 / 8], m![H % 60 = 56 % 8]>()
++            .vector_init()
++            .vector_intra_slice_tag(TagMode::Zero)
++            .vector_narrow_split::<m![H % 60 = 56 / 4], m![H % 60 = 56 % 4]>()
++            .vector_fp_binary(FpBinaryOp::MulF(FpMulAlu::Mul0), &scale_vrf)
++            .vector_widen_concat::<m![H % 60 = 56 / 8], m![H % 60 = 56 % 8]>()
++            .vector_final()
++            .cast::<bf16, m![H % 60 = 56 % 8 # 16]>()
++            .commit_trim::<m![H % 60 = 56 % 8]>()
++            .commit_view(output.view_mut().tile::<m![H % 60], 56, m![H % 60 = 56 #{!} 60]>(0));
++    }
++    {
+         let scale_vrf: VrfTensor<f32, Chip, Cluster, HiddenRows, m![H % 60 = 4 # 8]> = ctx
+             .sub
+-            .begin(scale.view().tile::<m![H % 60], 4, m![H % 60 = 4 # 60]>(4 * i))
++            .begin(scale.view().tile::<m![H % 60], 4, m![H % 60 = 4 # 60]>(56))
+             .fetch::<m![1], m![H % 60 = 4]>()
+             .fetch_cast::<f32>()
+             .collect::<m![1], m![H % 60 = 4 # 8]>()
+             .to_vrf();
+         ctx.main
+-            .begin(x.view().tile::<m![H % 60], 4, m![H % 60 = 4 # 60]>(4 * i))
++            .begin(x.view().tile::<m![H % 60], 4, m![H % 60 = 4 # 60]>(56))
+             .fetch::<m![1], m![H % 60 = 4]>()
+             .fetch_cast::<f32>()
+             .collect::<m![1], m![H % 60 = 4 # 8]>()
+@@ -229,7 +251,7 @@
+             .vector_final()
+             .cast::<bf16, m![H % 60 = 4 # 16]>()
+             .commit_trim::<m![H % 60 = 4]>()
+-            .commit_view(output.view_mut().tile::<m![H % 60], 4, m![H % 60 = 4 #{!} 60]>(4 * i));
++            .commit_view(output.view_mut().tile::<m![H % 60], 4, m![H % 60 = 4 #{!} 60]>(56));
+     }
+     output
+ }
+--- a/src/device/shared/mlp.rs
++++ b/src/device/shared/mlp.rs
+@@ -21,47 +21,88 @@
+     DmTensor<bf16, Chip, Cluster, UpGateRows, m![L % 60]>,
+     DmTensor<bf16, Chip, Cluster, UpGateRows, m![L % 60]>,
+ ) {
+-    const ROWS_PER_SLICE: usize = 60;
+-    const ROWS_PER_PASS: usize = 4;
+-    const PASSES: usize = ROWS_PER_SLICE / ROWS_PER_PASS;
+ 
+     let mut up: DmTensor<bf16, Chip, Cluster, UpGateRows, m![L % 60]> = DmTensor::new();
+ 
+     let up_weight_packed: DmTensor<f4e2m1, Chip, Cluster, UpGateRows, m![L % 60, H]> =
+         up_weight_packed.to_dm(&mut ctx.tdma);
+-    let up_weight_packed: DmTensor<f8e4m3, Chip, Cluster, UpGateRows, m![L % 60, H]> = ctx
+-        .main
+-        .begin(up_weight_packed.view())
+-        .fetch::<m![L % 60], m![H]>()
+-        .fetch_table_lookup::<f8e4m3>()
+-        .collect::<m![L % 60, H / 32], m![H % 32]>()
+-        .commit_trim::<m![H % 32]>()
+-        .commit();
+ 
+     let up_weight_scale: DmTensor<f8e4m3, Chip, Cluster, UpGateRows, m![L % 60, H / 16]> =
+         up_weight_scale.to_dm(&mut ctx.tdma);
+ 
+-    for i in 0..PASSES {
++    // V6: seven 8-row blocks and a 4-row tail; same columns and rounding.
++    // 8 * (3840/16) * sizeof(f32) = 7680 bytes of scale VRF per slice.
++    for i in 0..7 {
++        let up_weight_scale_vrf: VrfTensor<f32, Chip, Cluster, UpGateRows, m![L % 60 = 8, H / 16]> = ctx
++            .sub
++            .begin(
++                up_weight_scale
++                    .view()
++                    .tile::<m![L % 60], 8, m![L % 60 = 8 # 60, H / 16]>(8 * i),
++            )
++            .fetch::<m![L % 60 = 8], m![H / 16]>()
++            .fetch_cast::<f32>()
++            .collect::<m![L % 60 = 8, H / 16 / 8], m![H / 16 % 8]>()
++            .to_vrf();
++
++        // Decode the raw F4 block in the fetch stream; no intermediate F8 DM tensor.
++        let up_weight: DmTensor<bf16, Chip, Cluster, UpGateRows, m![L % 60 = 8, H]> = ctx
++            .main
++            .begin(
++                up_weight_packed
++                    .view()
++                    .tile::<m![L % 60], 8, m![L % 60 = 8 # 60, H]>(8 * i),
++            )
++            .fetch::<m![L % 60 = 8, H / 32], m![H % 32]>()
++            .fetch_table_lookup::<f8e4m3>()
++            .fetch_cast::<f32>()
++            .collect::<m![L % 60 = 8, H / 8], m![H % 8]>()
++            .vector_init()
++            .vector_intra_slice_tag(TagMode::Zero)
++            .vector_narrow_split::<m![L % 60 = 8, H / 4], m![H % 4]>()
++            .vector_fp_binary(FpBinaryOp::MulF(FpMulAlu::Mul0), &up_weight_scale_vrf)
++            .vector_widen_concat::<m![L % 60 = 8, H / 8], m![H % 8]>()
++            .vector_final()
++            .cast::<bf16, m![H % 8 # 16]>()
++            .commit_trim::<m![H % 8]>()
++            .commit();
++
++        ctx.main
++            .begin(up_weight.view())
++            .fetch::<m![L % 60 = 8, H / 16], m![H % 16]>()
++            .collect::<m![L % 60 = 8, H / 16], m![H % 16]>()
++            .contract_outer::<m![L % 60 = 8, H / 32], m![H % 32], _, _, _>(&x_trf)
++            .contract_packet::<m![1]>()
++            .contract_time::<m![L % 60 = 8]>()
++            .contract_lane::<m![L % 60 = 8], m![1 # 8]>(LaneMode::Interleaved)
++            .cast::<bf16, m![1 # 16]>()
++            .transpose::<m![L % 60 = 8 / 4], m![L % 60 = 8 % 4 # 16]>()
++            .commit_trim::<m![L % 60 = 8 % 4]>()
++            .commit_view(up.view_mut().tile::<m![L % 60], 8, m![L % 60 = 8 #{!} 60]>(8 * i));
++    }
++    {
+         let up_weight_scale_vrf: VrfTensor<f32, Chip, Cluster, UpGateRows, m![L % 60 = 4, H / 16]> = ctx
+             .sub
+             .begin(
+                 up_weight_scale
+                     .view()
+-                    .tile::<m![L % 60], 4, m![L % 60 = 4 # 60, H / 16]>(4 * i),
++                    .tile::<m![L % 60], 4, m![L % 60 = 4 # 60, H / 16]>(56),
+             )
+             .fetch::<m![L % 60 = 4], m![H / 16]>()
+             .fetch_cast::<f32>()
+             .collect::<m![L % 60 = 4, H / 16 / 8], m![H / 16 % 8]>()
+             .to_vrf();
+ 
++        // Decode the raw F4 block in the fetch stream; no intermediate F8 DM tensor.
+         let up_weight: DmTensor<bf16, Chip, Cluster, UpGateRows, m![L % 60 = 4, H]> = ctx
+             .main
+             .begin(
+                 up_weight_packed
+                     .view()
+-                    .tile::<m![L % 60], 4, m![L % 60 = 4 # 60, H]>(4 * i),
++                    .tile::<m![L % 60], 4, m![L % 60 = 4 # 60, H]>(56),
+             )
+             .fetch::<m![L % 60 = 4, H / 32], m![H % 32]>()
++            .fetch_table_lookup::<f8e4m3>()
+             .fetch_cast::<f32>()
+             .collect::<m![L % 60 = 4, H / 8], m![H % 8]>()
+             .vector_init()
+@@ -85,46 +126,90 @@
+             .cast::<bf16, m![1 # 16]>()
+             .transpose::<m![1], m![L % 60 = 4 # 16]>()
+             .commit_trim::<m![L % 60 = 4]>()
+-            .commit_view(up.view_mut().tile::<m![L % 60], 4, m![L % 60 = 4 #{!} 60]>(4 * i));
++            .commit_view(up.view_mut().tile::<m![L % 60], 4, m![L % 60 = 4 #{!} 60]>(56));
+     }
+ 
+     let mut gate: DmTensor<bf16, Chip, Cluster, UpGateRows, m![L % 60]> = DmTensor::new();
+ 
+     let gate_weight_packed: DmTensor<f4e2m1, Chip, Cluster, UpGateRows, m![L % 60, H]> =
+         gate_weight_packed.to_dm(&mut ctx.tdma);
+-    let gate_weight_packed: DmTensor<f8e4m3, Chip, Cluster, UpGateRows, m![L % 60, H]> = ctx
+-        .main
+-        .begin(gate_weight_packed.view())
+-        .fetch::<m![L % 60], m![H]>()
+-        .fetch_table_lookup::<f8e4m3>()
+-        .collect::<m![L % 60, H / 32], m![H % 32]>()
+-        .commit_trim::<m![H % 32]>()
+-        .commit();
+ 
+     let gate_weight_scale: DmTensor<f8e4m3, Chip, Cluster, UpGateRows, m![L % 60, H / 16]> =
+         gate_weight_scale.to_dm(&mut ctx.tdma);
+ 
+-    for i in 0..PASSES {
++    // V6: seven 8-row blocks and a 4-row tail; same columns and rounding.
++    // 8 * (3840/16) * sizeof(f32) = 7680 bytes of scale VRF per slice.
++    for i in 0..7 {
++        let gate_weight_scale_vrf: VrfTensor<f32, Chip, Cluster, UpGateRows, m![L % 60 = 8, H / 16]> = ctx
++            .sub
++            .begin(
++                gate_weight_scale
++                    .view()
++                    .tile::<m![L % 60], 8, m![L % 60 = 8 # 60, H / 16]>(8 * i),
++            )
++            .fetch::<m![L % 60 = 8], m![H / 16]>()
++            .fetch_cast::<f32>()
++            .collect::<m![L % 60 = 8, H / 16 / 8], m![H / 16 % 8]>()
++            .to_vrf();
++
++        // Decode the raw F4 block in the fetch stream; no intermediate F8 DM tensor.
++        let gate_weight: DmTensor<bf16, Chip, Cluster, UpGateRows, m![L % 60 = 8, H]> = ctx
++            .main
++            .begin(
++                gate_weight_packed
++                    .view()
++                    .tile::<m![L % 60], 8, m![L % 60 = 8 # 60, H]>(8 * i),
++            )
++            .fetch::<m![L % 60 = 8, H / 32], m![H % 32]>()
++            .fetch_table_lookup::<f8e4m3>()
++            .fetch_cast::<f32>()
++            .collect::<m![L % 60 = 8, H / 8], m![H % 8]>()
++            .vector_init()
++            .vector_intra_slice_tag(TagMode::Zero)
++            .vector_narrow_split::<m![L % 60 = 8, H / 4], m![H % 4]>()
++            .vector_fp_binary(FpBinaryOp::MulF(FpMulAlu::Mul0), &gate_weight_scale_vrf)
++            .vector_widen_concat::<m![L % 60 = 8, H / 8], m![H % 8]>()
++            .vector_final()
++            .cast::<bf16, m![H % 8 # 16]>()
++            .commit_trim::<m![H % 8]>()
++            .commit();
++
++        ctx.main
++            .begin(gate_weight.view())
++            .fetch::<m![L % 60 = 8, H / 16], m![H % 16]>()
++            .collect::<m![L % 60 = 8, H / 16], m![H % 16]>()
++            .contract_outer::<m![L % 60 = 8, H / 32], m![H % 32], _, _, _>(&x_trf)
++            .contract_packet::<m![1]>()
++            .contract_time::<m![L % 60 = 8]>()
++            .contract_lane::<m![L % 60 = 8], m![1 # 8]>(LaneMode::Interleaved)
++            .cast::<bf16, m![1 # 16]>()
++            .transpose::<m![L % 60 = 8 / 4], m![L % 60 = 8 % 4 # 16]>()
++            .commit_trim::<m![L % 60 = 8 % 4]>()
++            .commit_view(gate.view_mut().tile::<m![L % 60], 8, m![L % 60 = 8 #{!} 60]>(8 * i));
++    }
++    {
+         let gate_weight_scale_vrf: VrfTensor<f32, Chip, Cluster, UpGateRows, m![L % 60 = 4, H / 16]> = ctx
+             .sub
+             .begin(
+                 gate_weight_scale
+                     .view()
+-                    .tile::<m![L % 60], 4, m![L % 60 = 4 # 60, H / 16]>(4 * i),
++                    .tile::<m![L % 60], 4, m![L % 60 = 4 # 60, H / 16]>(56),
+             )
+             .fetch::<m![L % 60 = 4], m![H / 16]>()
+             .fetch_cast::<f32>()
+             .collect::<m![L % 60 = 4, H / 16 / 8], m![H / 16 % 8]>()
+             .to_vrf();
+ 
++        // Decode the raw F4 block in the fetch stream; no intermediate F8 DM tensor.
+         let gate_weight: DmTensor<bf16, Chip, Cluster, UpGateRows, m![L % 60 = 4, H]> = ctx
+             .main
+             .begin(
+                 gate_weight_packed
+                     .view()
+-                    .tile::<m![L % 60], 4, m![L % 60 = 4 # 60, H]>(4 * i),
++                    .tile::<m![L % 60], 4, m![L % 60 = 4 # 60, H]>(56),
+             )
+             .fetch::<m![L % 60 = 4, H / 32], m![H % 32]>()
++            .fetch_table_lookup::<f8e4m3>()
+             .fetch_cast::<f32>()
+             .collect::<m![L % 60 = 4, H / 8], m![H % 8]>()
+             .vector_init()
+@@ -148,7 +233,7 @@
+             .cast::<bf16, m![1 # 16]>()
+             .transpose::<m![1], m![L % 60 = 4 # 16]>()
+             .commit_trim::<m![L % 60 = 4]>()
+-            .commit_view(gate.view_mut().tile::<m![L % 60], 4, m![L % 60 = 4 #{!} 60]>(4 * i));
++            .commit_view(gate.view_mut().tile::<m![L % 60], 4, m![L % 60 = 4 #{!} 60]>(56));
+     }
+ 
+     (up, gate)
+@@ -354,49 +439,43 @@
+ 
+     let down_weight_packed: DmTensor<f4e2m1, Chip, Cluster, DownRowsByColumns, m![H % 120, L % 1920]> =
+         down_weight_packed.to_dm(&mut ctx.tdma);
+-    let down_weight_packed: DmTensor<f8e4m3, Chip, Cluster, DownRowsByColumns, m![H % 120, L % 1920]> = ctx
+-        .main
+-        .begin(down_weight_packed.view())
+-        .fetch::<m![H % 120], m![L % 1920]>()
+-        .fetch_table_lookup::<f8e4m3>()
+-        .collect::<m![H % 120, L / 32 % 60], m![L % 32]>()
+-        .commit_trim::<m![L % 32]>()
+-        .commit();
+ 
+     let down_weight_scale: DmTensor<f8e4m3, Chip, Cluster, DownRowsByColumns, m![H % 120, L / 16 % 120]> =
+         down_weight_scale.to_dm(&mut ctx.tdma);
+ 
+-    // Twelve independent output rows per pass (10 passes instead of 30).
+-    // 12 * 120 f32 block scales = 5760 bytes, below the 8192-byte VRF limit.
+-    // Weight scaling, contraction columns and the 8-slice f32 sum stay unchanged.
+-    for i in 0..10 {
+-        let down_weight_scale_vrf: VrfTensor<f32, Chip, Cluster, DownRowsByColumns, m![H % 120 = 12, L / 16 % 120]> = ctx
++    // V6: seven 16-row blocks and an 8-row tail cover exactly 120 rows.
++    // 16 * (1920/16) * sizeof(f32) = 7680 bytes of scale VRF per slice.
++    // Preserve the original 8-slice f32 reduction before BF16 rounding.
++    for i in 0..7 {
++        let down_weight_scale_vrf: VrfTensor<f32, Chip, Cluster, DownRowsByColumns, m![H % 120 = 16, L / 16 % 120]> = ctx
+             .sub
+             .begin(
+                 down_weight_scale
+                     .view()
+-                    .tile::<m![H % 120], 12, m![H % 120 = 12 # 120, L / 16 % 120]>(12 * i),
+-            )
+-            .fetch::<m![H % 120 = 12], m![L / 16 % 120]>()
+-            .fetch_cast::<f32>()
+-            .collect::<m![H % 120 = 12, L / 16 / 8 % 15], m![L / 16 % 8]>()
++                    .tile::<m![H % 120], 16, m![H % 120 = 16 # 120, L / 16 % 120]>(16 * i),
++            )
++            .fetch::<m![H % 120 = 16], m![L / 16 % 120]>()
++            .fetch_cast::<f32>()
++            .collect::<m![H % 120 = 16, L / 16 / 8 % 15], m![L / 16 % 8]>()
+             .to_vrf();
+ 
+-        let down_weight: DmTensor<bf16, Chip, Cluster, DownRowsByColumns, m![H % 120 = 12, L % 1920]> = ctx
++        // Decode the raw F4 block in the fetch stream; no intermediate F8 DM tensor.
++        let down_weight: DmTensor<bf16, Chip, Cluster, DownRowsByColumns, m![H % 120 = 16, L % 1920]> = ctx
+             .main
+             .begin(
+                 down_weight_packed
+                     .view()
+-                    .tile::<m![H % 120], 12, m![H % 120 = 12 # 120, L % 1920]>(12 * i),
+-            )
+-            .fetch::<m![H % 120 = 12, L / 32 % 60], m![L % 32]>()
+-            .fetch_cast::<f32>()
+-            .collect::<m![H % 120 = 12, L / 8 % 240], m![L % 8]>()
++                    .tile::<m![H % 120], 16, m![H % 120 = 16 # 120, L % 1920]>(16 * i),
++            )
++            .fetch::<m![H % 120 = 16, L / 32 % 60], m![L % 32]>()
++            .fetch_table_lookup::<f8e4m3>()
++            .fetch_cast::<f32>()
++            .collect::<m![H % 120 = 16, L / 8 % 240], m![L % 8]>()
+             .vector_init()
+             .vector_intra_slice_tag(TagMode::Zero)
+-            .vector_narrow_split::<m![H % 120 = 12, L / 4 % 480], m![L % 4]>()
++            .vector_narrow_split::<m![H % 120 = 16, L / 4 % 480], m![L % 4]>()
+             .vector_fp_binary(FpBinaryOp::MulF(FpMulAlu::Mul0), &down_weight_scale_vrf)
+-            .vector_widen_concat::<m![H % 120 = 12, L / 8 % 240], m![L % 8]>()
++            .vector_widen_concat::<m![H % 120 = 16, L / 8 % 240], m![L % 8]>()
+             .vector_final()
+             .cast::<bf16, m![L % 8 # 16]>()
+             .commit_trim::<m![L % 8]>()
+@@ -404,19 +483,70 @@
+ 
+         ctx.main
+             .begin(down_weight.view())
+-            .fetch::<m![H % 120 = 12, L / 16 % 120], m![L % 16]>()
+-            .collect::<m![H % 120 = 12, L / 16 % 120], m![L % 16]>()
+-            .contract_outer::<m![H % 120 = 12, L / 32 % 60], m![L % 32], _, _, _>(&x_trf)
++            .fetch::<m![H % 120 = 16, L / 16 % 120], m![L % 16]>()
++            .collect::<m![H % 120 = 16, L / 16 % 120], m![L % 16]>()
++            .contract_outer::<m![H % 120 = 16, L / 32 % 60], m![L % 32], _, _, _>(&x_trf)
+             .contract_packet::<m![1]>()
+-            .contract_time::<m![H % 120 = 12]>()
+-            .contract_lane::<m![H % 120 = 12], m![1 # 8]>(LaneMode::Interleaved)
+-            .vector_init()
+-            .vector_inter_slice_reduce::<DownRows, m![H % 120 = 12]>(InterSliceReduceOpF32::Add)
++            .contract_time::<m![H % 120 = 16]>()
++            .contract_lane::<m![H % 120 = 16], m![1 # 8]>(LaneMode::Interleaved)
++            .vector_init()
++            .vector_inter_slice_reduce::<DownRows, m![H % 120 = 16]>(InterSliceReduceOpF32::Add)
+             .vector_final()
+             .cast::<bf16, m![1 # 16]>()
+-            .transpose::<m![H % 120 = 12 / 4], m![H % 120 = 12 % 4 # 16]>()
+-            .commit_trim::<m![H % 120 = 12 % 4]>()
+-            .commit_view(down.view_mut().tile::<m![H % 120], 12, m![H % 120 = 12 #{!} 120]>(12 * i));
++            .transpose::<m![H % 120 = 16 / 4], m![H % 120 = 16 % 4 # 16]>()
++            .commit_trim::<m![H % 120 = 16 % 4]>()
++            .commit_view(down.view_mut().tile::<m![H % 120], 16, m![H % 120 = 16 #{!} 120]>(16 * i));
++    }
++    {
++        let down_weight_scale_vrf: VrfTensor<f32, Chip, Cluster, DownRowsByColumns, m![H % 120 = 8, L / 16 % 120]> = ctx
++            .sub
++            .begin(
++                down_weight_scale
++                    .view()
++                    .tile::<m![H % 120], 8, m![H % 120 = 8 # 120, L / 16 % 120]>(112),
++            )
++            .fetch::<m![H % 120 = 8], m![L / 16 % 120]>()
++            .fetch_cast::<f32>()
++            .collect::<m![H % 120 = 8, L / 16 / 8 % 15], m![L / 16 % 8]>()
++            .to_vrf();
++
++        // Decode the raw F4 block in the fetch stream; no intermediate F8 DM tensor.
++        let down_weight: DmTensor<bf16, Chip, Cluster, DownRowsByColumns, m![H % 120 = 8, L % 1920]> = ctx
++            .main
++            .begin(
++                down_weight_packed
++                    .view()
++                    .tile::<m![H % 120], 8, m![H % 120 = 8 # 120, L % 1920]>(112),
++            )
++            .fetch::<m![H % 120 = 8, L / 32 % 60], m![L % 32]>()
++            .fetch_table_lookup::<f8e4m3>()
++            .fetch_cast::<f32>()
++            .collect::<m![H % 120 = 8, L / 8 % 240], m![L % 8]>()
++            .vector_init()
++            .vector_intra_slice_tag(TagMode::Zero)
++            .vector_narrow_split::<m![H % 120 = 8, L / 4 % 480], m![L % 4]>()
++            .vector_fp_binary(FpBinaryOp::MulF(FpMulAlu::Mul0), &down_weight_scale_vrf)
++            .vector_widen_concat::<m![H % 120 = 8, L / 8 % 240], m![L % 8]>()
++            .vector_final()
++            .cast::<bf16, m![L % 8 # 16]>()
++            .commit_trim::<m![L % 8]>()
++            .commit();
++
++        ctx.main
++            .begin(down_weight.view())
++            .fetch::<m![H % 120 = 8, L / 16 % 120], m![L % 16]>()
++            .collect::<m![H % 120 = 8, L / 16 % 120], m![L % 16]>()
++            .contract_outer::<m![H % 120 = 8, L / 32 % 60], m![L % 32], _, _, _>(&x_trf)
++            .contract_packet::<m![1]>()
++            .contract_time::<m![H % 120 = 8]>()
++            .contract_lane::<m![H % 120 = 8], m![1 # 8]>(LaneMode::Interleaved)
++            .vector_init()
++            .vector_inter_slice_reduce::<DownRows, m![H % 120 = 8]>(InterSliceReduceOpF32::Add)
++            .vector_final()
++            .cast::<bf16, m![1 # 16]>()
++            .transpose::<m![H % 120 = 8 / 4], m![H % 120 = 8 % 4 # 16]>()
++            .commit_trim::<m![H % 120 = 8 % 4]>()
++            .commit_view(down.view_mut().tile::<m![H % 120], 8, m![H % 120 = 8 #{!} 120]>(112));
+     }
+ 
+     down.to_dm(&mut ctx.tdma)

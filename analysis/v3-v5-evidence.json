@@ -1,0 +1,5806 @@
+{
+  "all3-v5/decoder_feedforward.json": {
+    "makespan": 523288,
+    "instruction_count": 705,
+    "tensor_count": 520,
+    "instruction_types": {
+      "Sub": 107,
+      "DmaLoad": 54,
+      "Main": 105,
+      "Core": 435,
+      "DmaStos": 3,
+      "DmaStore": 1
+    },
+    "context_busy_union_cycles": {
+      "DmaEngine": 246623,
+      "MainContext": 248951,
+      "VectorEngine": 248706,
+      "SubContext": 65342,
+      "PeCore": 4272
+    },
+    "sram_live_address_union_peak_bytes": 94265344,
+    "sram_live_address_union_peak_cycle": 417291,
+    "lut_setups": [
+      {
+        "load_index": "50",
+        "expand_index": "73",
+        "load_cycles": 838,
+        "expand_cycles": 1034,
+        "table_bytes": 4194304,
+        "consumer_indices": [
+          "78"
+        ]
+      },
+      {
+        "load_index": "86",
+        "expand_index": "109",
+        "load_cycles": 838,
+        "expand_cycles": 1034,
+        "table_bytes": 4194304,
+        "consumer_indices": [
+          "114"
+        ]
+      },
+      {
+        "load_index": "122",
+        "expand_index": "145",
+        "load_cycles": 838,
+        "expand_cycles": 1034,
+        "table_bytes": 4194304,
+        "consumer_indices": [
+          "150"
+        ]
+      },
+      {
+        "load_index": "158",
+        "expand_index": "181",
+        "load_cycles": 838,
+        "expand_cycles": 1034,
+        "table_bytes": 4194304,
+        "consumer_indices": [
+          "186"
+        ]
+      },
+      {
+        "load_index": "194",
+        "expand_index": "217",
+        "load_cycles": 838,
+        "expand_cycles": 1034,
+        "table_bytes": 4194304,
+        "consumer_indices": [
+          "222"
+        ]
+      },
+      {
+        "load_index": "230",
+        "expand_index": "253",
+        "load_cycles": 838,
+        "expand_cycles": 1034,
+        "table_bytes": 4194304,
+        "consumer_indices": [
+          "258"
+        ]
+      },
+      {
+        "load_index": "266",
+        "expand_index": "289",
+        "load_cycles": 838,
+        "expand_cycles": 1034,
+        "table_bytes": 4194304,
+        "consumer_indices": [
+          "294"
+        ]
+      },
+      {
+        "load_index": "302",
+        "expand_index": "325",
+        "load_cycles": 838,
+        "expand_cycles": 1034,
+        "table_bytes": 4194304,
+        "consumer_indices": [
+          "330"
+        ]
+      },
+      {
+        "load_index": "338",
+        "expand_index": "361",
+        "load_cycles": 838,
+        "expand_cycles": 1034,
+        "table_bytes": 4194304,
+        "consumer_indices": [
+          "366"
+        ]
+      },
+      {
+        "load_index": "374",
+        "expand_index": "397",
+        "load_cycles": 838,
+        "expand_cycles": 1034,
+        "table_bytes": 4194304,
+        "consumer_indices": [
+          "402"
+        ]
+      },
+      {
+        "load_index": "410",
+        "expand_index": "433",
+        "load_cycles": 838,
+        "expand_cycles": 1034,
+        "table_bytes": 4194304,
+        "consumer_indices": [
+          "438"
+        ]
+      },
+      {
+        "load_index": "446",
+        "expand_index": "469",
+        "load_cycles": 838,
+        "expand_cycles": 1034,
+        "table_bytes": 4194304,
+        "consumer_indices": [
+          "474"
+        ]
+      },
+      {
+        "load_index": "482",
+        "expand_index": "505",
+        "load_cycles": 838,
+        "expand_cycles": 1034,
+        "table_bytes": 4194304,
+        "consumer_indices": [
+          "510"
+        ]
+      },
+      {
+        "load_index": "518",
+        "expand_index": "541",
+        "load_cycles": 838,
+        "expand_cycles": 1034,
+        "table_bytes": 4194304,
+        "consumer_indices": [
+          "546"
+        ]
+      },
+      {
+        "load_index": "554",
+        "expand_index": "577",
+        "load_cycles": 838,
+        "expand_cycles": 1034,
+        "table_bytes": 4194304,
+        "consumer_indices": [
+          "582"
+        ]
+      },
+      {
+        "load_index": "593",
+        "expand_index": "615",
+        "load_cycles": 838,
+        "expand_cycles": 1034,
+        "table_bytes": 4194304,
+        "consumer_indices": [
+          "621"
+        ]
+      },
+      {
+        "load_index": "629",
+        "expand_index": "651",
+        "load_cycles": 838,
+        "expand_cycles": 1034,
+        "table_bytes": 4194304,
+        "consumer_indices": [
+          "657"
+        ]
+      },
+      {
+        "load_index": "665",
+        "expand_index": "687",
+        "load_cycles": 838,
+        "expand_cycles": 1034,
+        "table_bytes": 4194304,
+        "consumer_indices": [
+          "693"
+        ]
+      },
+      {
+        "load_index": "701",
+        "expand_index": "723",
+        "load_cycles": 838,
+        "expand_cycles": 1034,
+        "table_bytes": 4194304,
+        "consumer_indices": [
+          "729"
+        ]
+      },
+      {
+        "load_index": "737",
+        "expand_index": "759",
+        "load_cycles": 838,
+        "expand_cycles": 1034,
+        "table_bytes": 4194304,
+        "consumer_indices": [
+          "765"
+        ]
+      },
+      {
+        "load_index": "773",
+        "expand_index": "795",
+        "load_cycles": 838,
+        "expand_cycles": 1034,
+        "table_bytes": 4194304,
+        "consumer_indices": [
+          "801"
+        ]
+      },
+      {
+        "load_index": "809",
+        "expand_index": "831",
+        "load_cycles": 838,
+        "expand_cycles": 1034,
+        "table_bytes": 4194304,
+        "consumer_indices": [
+          "837"
+        ]
+      },
+      {
+        "load_index": "845",
+        "expand_index": "867",
+        "load_cycles": 838,
+        "expand_cycles": 1034,
+        "table_bytes": 4194304,
+        "consumer_indices": [
+          "873"
+        ]
+      },
+      {
+        "load_index": "881",
+        "expand_index": "903",
+        "load_cycles": 838,
+        "expand_cycles": 1034,
+        "table_bytes": 4194304,
+        "consumer_indices": [
+          "909"
+        ]
+      },
+      {
+        "load_index": "917",
+        "expand_index": "939",
+        "load_cycles": 838,
+        "expand_cycles": 1034,
+        "table_bytes": 4194304,
+        "consumer_indices": [
+          "945"
+        ]
+      },
+      {
+        "load_index": "953",
+        "expand_index": "975",
+        "load_cycles": 838,
+        "expand_cycles": 1034,
+        "table_bytes": 4194304,
+        "consumer_indices": [
+          "981"
+        ]
+      },
+      {
+        "load_index": "989",
+        "expand_index": "1011",
+        "load_cycles": 838,
+        "expand_cycles": 1034,
+        "table_bytes": 4194304,
+        "consumer_indices": [
+          "1017"
+        ]
+      },
+      {
+        "load_index": "1025",
+        "expand_index": "1047",
+        "load_cycles": 838,
+        "expand_cycles": 1034,
+        "table_bytes": 4194304,
+        "consumer_indices": [
+          "1053"
+        ]
+      },
+      {
+        "load_index": "1061",
+        "expand_index": "1083",
+        "load_cycles": 838,
+        "expand_cycles": 1034,
+        "table_bytes": 4194304,
+        "consumer_indices": [
+          "1089"
+        ]
+      },
+      {
+        "load_index": "1097",
+        "expand_index": "1119",
+        "load_cycles": 838,
+        "expand_cycles": 1034,
+        "table_bytes": 4194304,
+        "consumer_indices": [
+          "1125"
+        ]
+      },
+      {
+        "load_index": "1205",
+        "expand_index": "1227",
+        "load_cycles": 838,
+        "expand_cycles": 1034,
+        "table_bytes": 4194304,
+        "consumer_indices": [
+          "1231"
+        ]
+      },
+      {
+        "load_index": "1239",
+        "expand_index": "1261",
+        "load_cycles": 838,
+        "expand_cycles": 1034,
+        "table_bytes": 4194304,
+        "consumer_indices": [
+          "1265"
+        ]
+      },
+      {
+        "load_index": "1273",
+        "expand_index": "1295",
+        "load_cycles": 838,
+        "expand_cycles": 1034,
+        "table_bytes": 4194304,
+        "consumer_indices": [
+          "1299"
+        ]
+      },
+      {
+        "load_index": "1307",
+        "expand_index": "1329",
+        "load_cycles": 838,
+        "expand_cycles": 1034,
+        "table_bytes": 4194304,
+        "consumer_indices": [
+          "1333"
+        ]
+      },
+      {
+        "load_index": "1341",
+        "expand_index": "1363",
+        "load_cycles": 838,
+        "expand_cycles": 1034,
+        "table_bytes": 4194304,
+        "consumer_indices": [
+          "1367"
+        ]
+      },
+      {
+        "load_index": "1375",
+        "expand_index": "1397",
+        "load_cycles": 838,
+        "expand_cycles": 1034,
+        "table_bytes": 4194304,
+        "consumer_indices": [
+          "1401"
+        ]
+      },
+      {
+        "load_index": "1409",
+        "expand_index": "1431",
+        "load_cycles": 838,
+        "expand_cycles": 1034,
+        "table_bytes": 4194304,
+        "consumer_indices": [
+          "1435"
+        ]
+      },
+      {
+        "load_index": "1443",
+        "expand_index": "1465",
+        "load_cycles": 838,
+        "expand_cycles": 1034,
+        "table_bytes": 4194304,
+        "consumer_indices": [
+          "1469"
+        ]
+      },
+      {
+        "load_index": "1477",
+        "expand_index": "1499",
+        "load_cycles": 838,
+        "expand_cycles": 1034,
+        "table_bytes": 4194304,
+        "consumer_indices": [
+          "1503"
+        ]
+      },
+      {
+        "load_index": "1511",
+        "expand_index": "1533",
+        "load_cycles": 838,
+        "expand_cycles": 1034,
+        "table_bytes": 4194304,
+        "consumer_indices": [
+          "1537"
+        ]
+      }
+    ],
+    "operator_groups": [
+      {
+        "source": "--> src/device/shared/rmsnorm_grouped.rs:22:73",
+        "type": "DmaLoad",
+        "count": 1,
+        "duration_sum": 1406,
+        "durations": [
+          1406
+        ],
+        "begin": 1003,
+        "end": 2409
+      },
+      {
+        "source": "--> src/device/shared/rmsnorm_grouped.rs:24:80",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 401,
+        "durations": [
+          401
+        ],
+        "begin": 2409,
+        "end": 2810
+      },
+      {
+        "source": "--> src/device/shared/rmsnorm_grouped.rs:69:81",
+        "type": "DmaLoad",
+        "count": 1,
+        "duration_sum": 1406,
+        "durations": [
+          1406
+        ],
+        "begin": 2409,
+        "end": 3815
+      },
+      {
+        "source": "--> src/device/shared/rmsnorm_grouped.rs:41:98",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 347,
+        "durations": [
+          347
+        ],
+        "begin": 2810,
+        "end": 3157
+      },
+      {
+        "source": "--> src/device/shared/rmsnorm_grouped.rs:54:82",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 282,
+        "durations": [
+          282
+        ],
+        "begin": 3157,
+        "end": 3439
+      },
+      {
+        "source": "--> src/device/shared/rmsnorm_grouped.rs:78:77",
+        "type": "Sub",
+        "count": 1,
+        "duration_sum": 267,
+        "durations": [
+          267
+        ],
+        "begin": 3439,
+        "end": 3706
+      },
+      {
+        "source": "--> src/device/shared/rmsnorm_grouped.rs:70:82",
+        "type": "Sub",
+        "count": 1,
+        "duration_sum": 383,
+        "durations": [
+          383
+        ],
+        "begin": 3815,
+        "end": 4198
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:91:9",
+        "type": "DmaLoad",
+        "count": 1,
+        "duration_sum": 8283,
+        "durations": [
+          8283
+        ],
+        "begin": 3815,
+        "end": 12098
+      },
+      {
+        "source": "--> src/device/shared/rmsnorm_grouped.rs:85:81",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 401,
+        "durations": [
+          401
+        ],
+        "begin": 4198,
+        "end": 4599
+      },
+      {
+        "source": "--> src/device/shared/rmsnorm_grouped.rs:101:5",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 744,
+        "durations": [
+          744
+        ],
+        "begin": 4599,
+        "end": 5343
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:159:75",
+        "type": "Sub",
+        "count": 1,
+        "duration_sum": 1223,
+        "durations": [
+          1223
+        ],
+        "begin": 5343,
+        "end": 6566
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:88:9",
+        "type": "DmaLoad",
+        "count": 1,
+        "duration_sum": 49157,
+        "durations": [
+          49157
+        ],
+        "begin": 12098,
+        "end": 61255
+      },
+      {
+        "source": "",
+        "type": "DmaLoad",
+        "count": 40,
+        "duration_sum": 33520,
+        "durations": [
+          838
+        ],
+        "begin": 61255,
+        "end": 498633
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:97:17",
+        "type": "Core",
+        "count": 30,
+        "duration_sum": 240,
+        "durations": [
+          6,
+          10
+        ],
+        "begin": 1000,
+        "end": 157469
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:94:104",
+        "type": "Sub",
+        "count": 15,
+        "duration_sum": 5745,
+        "durations": [
+          383
+        ],
+        "begin": 12177,
+        "end": 157909
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:110:17",
+        "type": "Core",
+        "count": 30,
+        "duration_sum": 240,
+        "durations": [
+          6,
+          10
+        ],
+        "begin": 12104,
+        "end": 157485
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:139:26",
+        "type": "Core",
+        "count": 30,
+        "duration_sum": 240,
+        "durations": [
+          6,
+          10
+        ],
+        "begin": 61261,
+        "end": 157501
+      },
+      {
+        "source": "",
+        "type": "Core",
+        "count": 50,
+        "duration_sum": 1680,
+        "durations": [
+          10,
+          600
+        ],
+        "begin": 61277,
+        "end": 523288
+      },
+      {
+        "source": "",
+        "type": "Sub",
+        "count": 40,
+        "duration_sum": 41360,
+        "durations": [
+          1034
+        ],
+        "begin": 62093,
+        "end": 501063
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:107:89",
+        "type": "Main",
+        "count": 15,
+        "duration_sum": 61800,
+        "durations": [
+          4120
+        ],
+        "begin": 63130,
+        "end": 163066
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:128:9",
+        "type": "Main",
+        "count": 15,
+        "duration_sum": 18375,
+        "durations": [
+          1225
+        ],
+        "begin": 67250,
+        "end": 164291
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:128:9",
+        "type": "Core",
+        "count": 15,
+        "duration_sum": 90,
+        "durations": [
+          6
+        ],
+        "begin": 68475,
+        "end": 164297
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:34:9",
+        "type": "DmaLoad",
+        "count": 1,
+        "duration_sum": 8283,
+        "durations": [
+          8283
+        ],
+        "begin": 163066,
+        "end": 171349
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:31:9",
+        "type": "DmaLoad",
+        "count": 1,
+        "duration_sum": 49157,
+        "durations": [
+          49157
+        ],
+        "begin": 171349,
+        "end": 220506
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:40:17",
+        "type": "Core",
+        "count": 30,
+        "duration_sum": 240,
+        "durations": [
+          6,
+          10
+        ],
+        "begin": 164297,
+        "end": 316678
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:37:102",
+        "type": "Sub",
+        "count": 15,
+        "duration_sum": 5745,
+        "durations": [
+          383
+        ],
+        "begin": 171428,
+        "end": 317118
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:53:17",
+        "type": "Core",
+        "count": 30,
+        "duration_sum": 240,
+        "durations": [
+          6,
+          10
+        ],
+        "begin": 171355,
+        "end": 316694
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:82:26",
+        "type": "Core",
+        "count": 30,
+        "duration_sum": 240,
+        "durations": [
+          6,
+          10
+        ],
+        "begin": 220512,
+        "end": 316710
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:50:87",
+        "type": "Main",
+        "count": 15,
+        "duration_sum": 61800,
+        "durations": [
+          4120
+        ],
+        "begin": 222378,
+        "end": 322272
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:71:9",
+        "type": "Main",
+        "count": 15,
+        "duration_sum": 18375,
+        "durations": [
+          1225
+        ],
+        "begin": 226498,
+        "end": 323497
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:71:9",
+        "type": "Core",
+        "count": 15,
+        "duration_sum": 90,
+        "durations": [
+          6
+        ],
+        "begin": 227723,
+        "end": 323503
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:213:76",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 294,
+        "durations": [
+          294
+        ],
+        "begin": 323576,
+        "end": 323870
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:248:9",
+        "type": "DmaLoad",
+        "count": 1,
+        "duration_sum": 1328,
+        "durations": [
+          1328
+        ],
+        "begin": 323576,
+        "end": 324904
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:256:78",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 294,
+        "durations": [
+          294
+        ],
+        "begin": 323870,
+        "end": 324164
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:249:93",
+        "type": "Sub",
+        "count": 1,
+        "duration_sum": 267,
+        "durations": [
+          267
+        ],
+        "begin": 324904,
+        "end": 325171
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:223:9",
+        "type": "DmaLoad",
+        "count": 1,
+        "duration_sum": 1328,
+        "durations": [
+          1328
+        ],
+        "begin": 325104,
+        "end": 326432
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:265:78",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 311,
+        "durations": [
+          311
+        ],
+        "begin": 325171,
+        "end": 325482
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:281:77",
+        "type": "Sub",
+        "count": 1,
+        "duration_sum": 343,
+        "durations": [
+          343
+        ],
+        "begin": 325482,
+        "end": 325825
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:300:82",
+        "type": "Sub",
+        "count": 1,
+        "duration_sum": 323,
+        "durations": [
+          323
+        ],
+        "begin": 325825,
+        "end": 326148
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:224:91",
+        "type": "Sub",
+        "count": 1,
+        "duration_sum": 267,
+        "durations": [
+          267
+        ],
+        "begin": 326432,
+        "end": 326699
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:347:9",
+        "type": "DmaLoad",
+        "count": 1,
+        "duration_sum": 18998,
+        "durations": [
+          18998
+        ],
+        "begin": 326432,
+        "end": 345430
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:231:76",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 311,
+        "durations": [
+          311
+        ],
+        "begin": 326699,
+        "end": 327010
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:307:5",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 311,
+        "durations": [
+          311
+        ],
+        "begin": 327010,
+        "end": 327321
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:175:77",
+        "type": "DmaStos",
+        "count": 1,
+        "duration_sum": 11687,
+        "durations": [
+          11687
+        ],
+        "begin": 345430,
+        "end": 357117
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:333:89",
+        "type": "Sub",
+        "count": 1,
+        "duration_sum": 743,
+        "durations": [
+          743
+        ],
+        "begin": 357117,
+        "end": 357860
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:344:9",
+        "type": "DmaLoad",
+        "count": 1,
+        "duration_sum": 58302,
+        "durations": [
+          58302
+        ],
+        "begin": 357117,
+        "end": 415419
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:356:17",
+        "type": "Core",
+        "count": 20,
+        "duration_sum": 160,
+        "durations": [
+          6,
+          10
+        ],
+        "begin": 323503,
+        "end": 499529
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:353:119",
+        "type": "Sub",
+        "count": 10,
+        "duration_sum": 4430,
+        "durations": [
+          443
+        ],
+        "begin": 357939,
+        "end": 500029
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:369:17",
+        "type": "Core",
+        "count": 20,
+        "duration_sum": 160,
+        "durations": [
+          6,
+          10
+        ],
+        "begin": 345436,
+        "end": 499545
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:401:26",
+        "type": "Core",
+        "count": 20,
+        "duration_sum": 160,
+        "durations": [
+          6,
+          10
+        ],
+        "begin": 415425,
+        "end": 499561
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:366:105",
+        "type": "Main",
+        "count": 10,
+        "duration_sum": 60400,
+        "durations": [
+          6040
+        ],
+        "begin": 417291,
+        "end": 507103
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:387:9",
+        "type": "Main",
+        "count": 10,
+        "duration_sum": 17120,
+        "durations": [
+          1712
+        ],
+        "begin": 423331,
+        "end": 508815
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:387:9",
+        "type": "Core",
+        "count": 10,
+        "duration_sum": 60,
+        "durations": [
+          6
+        ],
+        "begin": 425043,
+        "end": 508821
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:179:9",
+        "type": "DmaLoad",
+        "count": 1,
+        "duration_sum": 447,
+        "durations": [
+          447
+        ],
+        "begin": 507103,
+        "end": 507550
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:180:82",
+        "type": "Sub",
+        "count": 1,
+        "duration_sum": 267,
+        "durations": [
+          267
+        ],
+        "begin": 509015,
+        "end": 509282
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:404:5",
+        "type": "DmaStos",
+        "count": 1,
+        "duration_sum": 898,
+        "durations": [
+          898
+        ],
+        "begin": 509015,
+        "end": 509913
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:187:61",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 1241,
+        "durations": [
+          1241
+        ],
+        "begin": 509913,
+        "end": 511154
+      },
+      {
+        "source": "--> src/device/shared/rmsnorm.rs:64:81",
+        "type": "DmaLoad",
+        "count": 1,
+        "duration_sum": 546,
+        "durations": [
+          546
+        ],
+        "begin": 509913,
+        "end": 510459
+      },
+      {
+        "source": "--> src/device/shared/rmsnorm.rs:65:82",
+        "type": "Sub",
+        "count": 1,
+        "duration_sum": 383,
+        "durations": [
+          383
+        ],
+        "begin": 510459,
+        "end": 510842
+      },
+      {
+        "source": "--> src/ops.rs:217:65",
+        "type": "DmaLoad",
+        "count": 1,
+        "duration_sum": 547,
+        "durations": [
+          547
+        ],
+        "begin": 510459,
+        "end": 511006
+      },
+      {
+        "source": "--> src/device/shared/rmsnorm.rs:17:73",
+        "type": "DmaStos",
+        "count": 1,
+        "duration_sum": 449,
+        "durations": [
+          449
+        ],
+        "begin": 511154,
+        "end": 511603
+      },
+      {
+        "source": "--> src/device/shared/rmsnorm.rs:19:80",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 401,
+        "durations": [
+          401
+        ],
+        "begin": 511603,
+        "end": 512004
+      },
+      {
+        "source": "--> src/device/shared/rmsnorm.rs:36:92",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 347,
+        "durations": [
+          347
+        ],
+        "begin": 512004,
+        "end": 512351
+      },
+      {
+        "source": "--> src/device/shared/rmsnorm.rs:49:76",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 282,
+        "durations": [
+          282
+        ],
+        "begin": 512351,
+        "end": 512633
+      },
+      {
+        "source": "--> src/device/shared/rmsnorm.rs:73:77",
+        "type": "Sub",
+        "count": 1,
+        "duration_sum": 267,
+        "durations": [
+          267
+        ],
+        "begin": 512633,
+        "end": 512900
+      },
+      {
+        "source": "--> src/device/shared/rmsnorm.rs:80:81",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 401,
+        "durations": [
+          401
+        ],
+        "begin": 512900,
+        "end": 513301
+      },
+      {
+        "source": "--> src/device/shared/rmsnorm.rs:96:5",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 744,
+        "durations": [
+          744
+        ],
+        "begin": 513301,
+        "end": 514045
+      },
+      {
+        "source": "--> src/device/shared/residual.rs:19:29",
+        "type": "Core",
+        "count": 16,
+        "duration_sum": 128,
+        "durations": [
+          6,
+          10
+        ],
+        "begin": 508821,
+        "end": 519688
+      },
+      {
+        "source": "--> src/device/shared/residual.rs:21:79",
+        "type": "Sub",
+        "count": 8,
+        "duration_sum": 3064,
+        "durations": [
+          383
+        ],
+        "begin": 514124,
+        "end": 520128
+      },
+      {
+        "source": "--> src/device/shared/residual.rs:40:26",
+        "type": "Core",
+        "count": 16,
+        "duration_sum": 128,
+        "durations": [
+          6,
+          10
+        ],
+        "begin": 511012,
+        "end": 519704
+      },
+      {
+        "source": "--> src/device/shared/residual.rs:18:22",
+        "type": "Core",
+        "count": 16,
+        "duration_sum": 128,
+        "durations": [
+          6,
+          10
+        ],
+        "begin": 511028,
+        "end": 519720
+      },
+      {
+        "source": "--> src/device/shared/residual.rs:29:9",
+        "type": "Main",
+        "count": 8,
+        "duration_sum": 2728,
+        "durations": [
+          341
+        ],
+        "begin": 514507,
+        "end": 520469
+      },
+      {
+        "source": "--> src/device/shared/residual.rs:29:9",
+        "type": "Core",
+        "count": 8,
+        "duration_sum": 48,
+        "durations": [
+          6
+        ],
+        "begin": 514848,
+        "end": 520475
+      },
+      {
+        "source": "--> src/device/shared/residual.rs:51:67",
+        "type": "DmaLoad",
+        "count": 1,
+        "duration_sum": 447,
+        "durations": [
+          447
+        ],
+        "begin": 520128,
+        "end": 520575
+      },
+      {
+        "source": "--> src/device/shared/residual.rs:52:67",
+        "type": "Sub",
+        "count": 1,
+        "duration_sum": 265,
+        "durations": [
+          265
+        ],
+        "begin": 520748,
+        "end": 521013
+      },
+      {
+        "source": "--> src/device/shared/residual.rs:60:5",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 1241,
+        "durations": [
+          1241
+        ],
+        "begin": 521013,
+        "end": 522254
+      },
+      {
+        "source": "--> src/ops.rs:238:5",
+        "type": "DmaStore",
+        "count": 1,
+        "duration_sum": 434,
+        "durations": [
+          434
+        ],
+        "begin": 522254,
+        "end": 522688
+      }
+    ],
+    "largest_sram_tensors": [
+      {
+        "name": "up_weight_packed",
+        "index": "235",
+        "buffer_type": "Sram",
+        "lifetime": {
+          "begin": 171349,
+          "end": 316694,
+          "block_begin": 0,
+          "block_end": 0
+        },
+        "address": 16777216,
+        "size": 58982400,
+        "physical_pages": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "shape": "MappingShape[Chip: 1, Cluster: 1 # 2, Slice: L / 60, Element: (L % 60, H)]",
+        "fingerprint": null
+      },
+      {
+        "name": "down_weight_packed",
+        "index": "470",
+        "buffer_type": "Sram",
+        "lifetime": {
+          "begin": 357117,
+          "end": 499545,
+          "block_begin": 0,
+          "block_end": 0
+        },
+        "address": 16777216,
+        "size": 58982400,
+        "physical_pages": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "shape": "MappingShape[Chip: 1, Cluster: 1 # 2, Slice: (H / 120, L / 1920), Element: (H % 120, L % 1920)]",
+        "fingerprint": null
+      },
+      {
+        "name": "gate_weight_packed",
+        "index": "18",
+        "buffer_type": "Sram",
+        "lifetime": {
+          "begin": 12098,
+          "end": 157485,
+          "block_begin": 0,
+          "block_end": 0
+        },
+        "address": 16777216,
+        "size": 58982400,
+        "physical_pages": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "shape": "MappingShape[Chip: 1, Cluster: 1 # 2, Slice: L / 60, Element: (L % 60, H)]",
+        "fingerprint": null
+      },
+      {
+        "name": "vISA(T218)_i4_project_down_85",
+        "index": "485",
+        "buffer_type": "Sram",
+        "lifetime": {
+          "begin": 417291,
+          "end": 425043,
+          "block_begin": 0,
+          "block_end": 0
+        },
+        "address": 75759616,
+        "size": 23592960,
+        "physical_pages": [
+          4,
+          5
+        ],
+        "shape": "MappingShape[Chip: 1, Cluster: 1 # 2, Slice: (H / 120, L / 1920), Element: (H % 120 = 12, L % 1920)]",
+        "fingerprint": null
+      },
+      {
+        "name": "vISA(T218)_i4_project_down_85",
+        "index": "499",
+        "buffer_type": "Sram",
+        "lifetime": {
+          "begin": 426599,
+          "end": 434351,
+          "block_begin": 0,
+          "block_end": 0
+        },
+        "address": 75759616,
+        "size": 23592960,
+        "physical_pages": [
+          4,
+          5
+        ],
+        "shape": "MappingShape[Chip: 1, Cluster: 1 # 2, Slice: (H / 120, L / 1920), Element: (H % 120 = 12, L % 1920)]",
+        "fingerprint": null
+      },
+      {
+        "name": "vISA(T218)_i4_project_down_85",
+        "index": "513",
+        "buffer_type": "Sram",
+        "lifetime": {
+          "begin": 435907,
+          "end": 443659,
+          "block_begin": 0,
+          "block_end": 0
+        },
+        "address": 75759616,
+        "size": 23592960,
+        "physical_pages": [
+          4,
+          5
+        ],
+        "shape": "MappingShape[Chip: 1, Cluster: 1 # 2, Slice: (H / 120, L / 1920), Element: (H % 120 = 12, L % 1920)]",
+        "fingerprint": null
+      },
+      {
+        "name": "vISA(T218)_i4_project_down_85",
+        "index": "527",
+        "buffer_type": "Sram",
+        "lifetime": {
+          "begin": 445215,
+          "end": 452967,
+          "block_begin": 0,
+          "block_end": 0
+        },
+        "address": 75759616,
+        "size": 23592960,
+        "physical_pages": [
+          4,
+          5
+        ],
+        "shape": "MappingShape[Chip: 1, Cluster: 1 # 2, Slice: (H / 120, L / 1920), Element: (H % 120 = 12, L % 1920)]",
+        "fingerprint": null
+      },
+      {
+        "name": "vISA(T218)_i4_project_down_85",
+        "index": "541",
+        "buffer_type": "Sram",
+        "lifetime": {
+          "begin": 454523,
+          "end": 462275,
+          "block_begin": 0,
+          "block_end": 0
+        },
+        "address": 75759616,
+        "size": 23592960,
+        "physical_pages": [
+          4,
+          5
+        ],
+        "shape": "MappingShape[Chip: 1, Cluster: 1 # 2, Slice: (H / 120, L / 1920), Element: (H % 120 = 12, L % 1920)]",
+        "fingerprint": null
+      }
+    ]
+  },
+  "all3-v5/sliding_attention_output.json": {
+    "makespan": 54418,
+    "instruction_count": 134,
+    "tensor_count": 92,
+    "instruction_types": {
+      "Sub": 18,
+      "DmaLoad": 6,
+      "Core": 91,
+      "Main": 16,
+      "DmaStos": 2,
+      "DmaStore": 1
+    },
+    "context_busy_union_cycles": {
+      "DmaEngine": 33204,
+      "PeCore": 1840,
+      "SubContext": 6067,
+      "MainContext": 15343,
+      "VectorEngine": 15343
+    },
+    "sram_live_address_union_peak_bytes": 43962368,
+    "sram_live_address_union_peak_cycle": 31831,
+    "lut_setups": [
+      {
+        "load_index": "4",
+        "expand_index": "20",
+        "load_cycles": 838,
+        "expand_cycles": 1293,
+        "table_bytes": 8388608,
+        "consumer_indices": [
+          "34"
+        ]
+      }
+    ],
+    "operator_groups": [
+      {
+        "source": "",
+        "type": "DmaLoad",
+        "count": 1,
+        "duration_sum": 838,
+        "durations": [
+          838
+        ],
+        "begin": 1003,
+        "end": 1841
+      },
+      {
+        "source": "--> src/device/sliding/projection.rs:231:26",
+        "type": "Core",
+        "count": 2,
+        "duration_sum": 16,
+        "durations": [
+          6,
+          10
+        ],
+        "begin": 1000,
+        "end": 1016
+      },
+      {
+        "source": "--> src/device/sliding/projection.rs:219:20",
+        "type": "Core",
+        "count": 2,
+        "duration_sum": 16,
+        "durations": [
+          6,
+          10
+        ],
+        "begin": 1016,
+        "end": 40540
+      },
+      {
+        "source": "--> src/device/sliding/projection.rs:213:20",
+        "type": "Core",
+        "count": 2,
+        "duration_sum": 16,
+        "durations": [
+          6,
+          10
+        ],
+        "begin": 1026,
+        "end": 31837
+      },
+      {
+        "source": "",
+        "type": "Core",
+        "count": 12,
+        "duration_sum": 1300,
+        "durations": [
+          10,
+          600
+        ],
+        "begin": 1036,
+        "end": 54418
+      },
+      {
+        "source": "--> src/device/sliding/projection.rs:254:26",
+        "type": "Core",
+        "count": 2,
+        "duration_sum": 16,
+        "durations": [
+          6,
+          10
+        ],
+        "begin": 1046,
+        "end": 41041
+      },
+      {
+        "source": "--> src/device/sliding/projection.rs:242:20",
+        "type": "Core",
+        "count": 2,
+        "duration_sum": 16,
+        "durations": [
+          6,
+          10
+        ],
+        "begin": 1056,
+        "end": 40546
+      },
+      {
+        "source": "--> src/device/sliding/projection.rs:236:20",
+        "type": "Core",
+        "count": 2,
+        "duration_sum": 16,
+        "durations": [
+          6,
+          10
+        ],
+        "begin": 1066,
+        "end": 31843
+      },
+      {
+        "source": "",
+        "type": "Sub",
+        "count": 1,
+        "duration_sum": 1293,
+        "durations": [
+          1293
+        ],
+        "begin": 1841,
+        "end": 3134
+      },
+      {
+        "source": "--> src/device/sliding/projection.rs:169:80",
+        "type": "DmaLoad",
+        "count": 1,
+        "duration_sum": 2090,
+        "durations": [
+          2090
+        ],
+        "begin": 1841,
+        "end": 3931
+      },
+      {
+        "source": "--> src/device/sliding/projection.rs:170:92",
+        "type": "Sub",
+        "count": 1,
+        "duration_sum": 519,
+        "durations": [
+          519
+        ],
+        "begin": 3931,
+        "end": 4450
+      },
+      {
+        "source": "--> src/device/sliding/projection.rs:176:98",
+        "type": "DmaLoad",
+        "count": 1,
+        "duration_sum": 26734,
+        "durations": [
+          26734
+        ],
+        "begin": 3937,
+        "end": 30671
+      },
+      {
+        "source": "--> src/device/sliding/projection.rs:177:78",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 9863,
+        "durations": [
+          9863
+        ],
+        "begin": 30671,
+        "end": 40534
+      },
+      {
+        "source": "--> src/device/shared/rmsnorm.rs:64:81",
+        "type": "DmaLoad",
+        "count": 1,
+        "duration_sum": 546,
+        "durations": [
+          546
+        ],
+        "begin": 30671,
+        "end": 31217
+      },
+      {
+        "source": "--> src/device/shared/rmsnorm.rs:65:82",
+        "type": "Sub",
+        "count": 1,
+        "duration_sum": 383,
+        "durations": [
+          383
+        ],
+        "begin": 31217,
+        "end": 31600
+      },
+      {
+        "source": "--> src/device/sliding/projection.rs:207:72",
+        "type": "DmaLoad",
+        "count": 1,
+        "duration_sum": 614,
+        "durations": [
+          614
+        ],
+        "begin": 31217,
+        "end": 31831
+      },
+      {
+        "source": "--> src/ops.rs:142:65",
+        "type": "DmaLoad",
+        "count": 1,
+        "duration_sum": 547,
+        "durations": [
+          547
+        ],
+        "begin": 31831,
+        "end": 32378
+      },
+      {
+        "source": "--> src/device/sliding/projection.rs:211:85",
+        "type": "Sub",
+        "count": 1,
+        "duration_sum": 277,
+        "durations": [
+          277
+        ],
+        "begin": 31910,
+        "end": 32187
+      },
+      {
+        "source": "--> src/device/sliding/projection.rs:234:88",
+        "type": "Sub",
+        "count": 1,
+        "duration_sum": 264,
+        "durations": [
+          264
+        ],
+        "begin": 32266,
+        "end": 32530
+      },
+      {
+        "source": "--> src/device/sliding/projection.rs:218:9",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 295,
+        "durations": [
+          295
+        ],
+        "begin": 40734,
+        "end": 41029
+      },
+      {
+        "source": "--> src/device/sliding/projection.rs:218:9",
+        "type": "Core",
+        "count": 1,
+        "duration_sum": 6,
+        "durations": [
+          6
+        ],
+        "begin": 41029,
+        "end": 41035
+      },
+      {
+        "source": "--> src/device/sliding/projection.rs:241:9",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 282,
+        "durations": [
+          282
+        ],
+        "begin": 41229,
+        "end": 41511
+      },
+      {
+        "source": "--> src/device/sliding/projection.rs:241:9",
+        "type": "Core",
+        "count": 1,
+        "duration_sum": 6,
+        "durations": [
+          6
+        ],
+        "begin": 41511,
+        "end": 41517
+      },
+      {
+        "source": "--> src/device/sliding/projection.rs:196:5",
+        "type": "DmaStos",
+        "count": 1,
+        "duration_sum": 952,
+        "durations": [
+          952
+        ],
+        "begin": 41511,
+        "end": 42463
+      },
+      {
+        "source": "--> src/device/shared/rmsnorm.rs:17:73",
+        "type": "DmaStos",
+        "count": 1,
+        "duration_sum": 449,
+        "durations": [
+          449
+        ],
+        "begin": 42463,
+        "end": 42912
+      },
+      {
+        "source": "--> src/device/shared/rmsnorm.rs:19:80",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 401,
+        "durations": [
+          401
+        ],
+        "begin": 42912,
+        "end": 43313
+      },
+      {
+        "source": "--> src/device/shared/rmsnorm.rs:36:92",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 347,
+        "durations": [
+          347
+        ],
+        "begin": 43313,
+        "end": 43660
+      },
+      {
+        "source": "--> src/device/shared/rmsnorm.rs:49:76",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 282,
+        "durations": [
+          282
+        ],
+        "begin": 43660,
+        "end": 43942
+      },
+      {
+        "source": "--> src/device/shared/rmsnorm.rs:73:77",
+        "type": "Sub",
+        "count": 1,
+        "duration_sum": 267,
+        "durations": [
+          267
+        ],
+        "begin": 43942,
+        "end": 44209
+      },
+      {
+        "source": "--> src/device/shared/rmsnorm.rs:80:81",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 401,
+        "durations": [
+          401
+        ],
+        "begin": 44209,
+        "end": 44610
+      },
+      {
+        "source": "--> src/device/shared/rmsnorm.rs:96:5",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 744,
+        "durations": [
+          744
+        ],
+        "begin": 44610,
+        "end": 45354
+      },
+      {
+        "source": "--> src/device/shared/residual.rs:19:29",
+        "type": "Core",
+        "count": 16,
+        "duration_sum": 128,
+        "durations": [
+          6,
+          10
+        ],
+        "begin": 41517,
+        "end": 50997
+      },
+      {
+        "source": "--> src/device/shared/residual.rs:21:79",
+        "type": "Sub",
+        "count": 8,
+        "duration_sum": 3064,
+        "durations": [
+          383
+        ],
+        "begin": 45433,
+        "end": 51437
+      },
+      {
+        "source": "--> src/device/shared/residual.rs:40:26",
+        "type": "Core",
+        "count": 16,
+        "duration_sum": 128,
+        "durations": [
+          6,
+          10
+        ],
+        "begin": 41533,
+        "end": 51013
+      },
+      {
+        "source": "--> src/device/shared/residual.rs:18:22",
+        "type": "Core",
+        "count": 16,
+        "duration_sum": 128,
+        "durations": [
+          6,
+          10
+        ],
+        "begin": 41549,
+        "end": 51029
+      },
+      {
+        "source": "--> src/device/shared/residual.rs:29:9",
+        "type": "Main",
+        "count": 8,
+        "duration_sum": 2728,
+        "durations": [
+          341
+        ],
+        "begin": 45816,
+        "end": 51778
+      },
+      {
+        "source": "--> src/device/shared/residual.rs:29:9",
+        "type": "Core",
+        "count": 8,
+        "duration_sum": 48,
+        "durations": [
+          6
+        ],
+        "begin": 46157,
+        "end": 51784
+      },
+      {
+        "source": "--> src/ops.rs:144:5",
+        "type": "DmaStore",
+        "count": 1,
+        "duration_sum": 434,
+        "durations": [
+          434
+        ],
+        "begin": 53384,
+        "end": 53818
+      }
+    ],
+    "largest_sram_tensors": [
+      {
+        "name": "vISA(T68)_i0_project_output_hbm_39",
+        "index": "18",
+        "buffer_type": "Sram",
+        "lifetime": {
+          "begin": 3937,
+          "end": 40534,
+          "block_begin": 0,
+          "block_end": 0
+        },
+        "address": 33554432,
+        "size": 31457280,
+        "physical_pages": [
+          1,
+          2
+        ],
+        "shape": "MappingShape[Chip: 1, Cluster: 1 # 2, Slice: (H / 60, Qs / 1024), Element: (H % 60, Qs % 1024)]",
+        "fingerprint": null
+      },
+      {
+        "name": "",
+        "index": "15",
+        "buffer_type": "Sram",
+        "lifetime": {
+          "begin": 1841,
+          "end": 40534,
+          "block_begin": 0,
+          "block_end": 0
+        },
+        "address": 131072,
+        "size": 8388608,
+        "physical_pages": [
+          0
+        ],
+        "shape": "",
+        "fingerprint": null
+      },
+      {
+        "name": "vISA(T116)_i3_add_36",
+        "index": "60",
+        "buffer_type": "Sram",
+        "lifetime": {
+          "begin": 46157,
+          "end": 46163,
+          "block_begin": 0,
+          "block_end": 0
+        },
+        "address": 9568256,
+        "size": 3932160,
+        "physical_pages": [
+          0
+        ],
+        "shape": "",
+        "fingerprint": null
+      },
+      {
+        "name": "vISA(T116)_i3_add_36",
+        "index": "71",
+        "buffer_type": "Sram",
+        "lifetime": {
+          "begin": 46960,
+          "end": 46966,
+          "block_begin": 0,
+          "block_end": 0
+        },
+        "address": 9568256,
+        "size": 3932160,
+        "physical_pages": [
+          0
+        ],
+        "shape": "",
+        "fingerprint": null
+      },
+      {
+        "name": "vISA(T116)_i3_add_36",
+        "index": "82",
+        "buffer_type": "Sram",
+        "lifetime": {
+          "begin": 47763,
+          "end": 47769,
+          "block_begin": 0,
+          "block_end": 0
+        },
+        "address": 9568256,
+        "size": 3932160,
+        "physical_pages": [
+          0
+        ],
+        "shape": "",
+        "fingerprint": null
+      },
+      {
+        "name": "vISA(T116)_i3_add_36",
+        "index": "93",
+        "buffer_type": "Sram",
+        "lifetime": {
+          "begin": 48566,
+          "end": 48572,
+          "block_begin": 0,
+          "block_end": 0
+        },
+        "address": 9568256,
+        "size": 3932160,
+        "physical_pages": [
+          0
+        ],
+        "shape": "",
+        "fingerprint": null
+      },
+      {
+        "name": "vISA(T116)_i3_add_36",
+        "index": "104",
+        "buffer_type": "Sram",
+        "lifetime": {
+          "begin": 49369,
+          "end": 49375,
+          "block_begin": 0,
+          "block_end": 0
+        },
+        "address": 9568256,
+        "size": 3932160,
+        "physical_pages": [
+          0
+        ],
+        "shape": "",
+        "fingerprint": null
+      },
+      {
+        "name": "vISA(T116)_i3_add_36",
+        "index": "115",
+        "buffer_type": "Sram",
+        "lifetime": {
+          "begin": 50172,
+          "end": 50178,
+          "block_begin": 0,
+          "block_end": 0
+        },
+        "address": 9568256,
+        "size": 3932160,
+        "physical_pages": [
+          0
+        ],
+        "shape": "",
+        "fingerprint": null
+      }
+    ]
+  },
+  "all3-v5/sliding_project_qkv.json": {
+    "makespan": 75206,
+    "instruction_count": 122,
+    "tensor_count": 101,
+    "instruction_types": {
+      "Sub": 37,
+      "DmaLoad": 13,
+      "Core": 28,
+      "Main": 37,
+      "DmaGather": 2,
+      "DmaStos": 2,
+      "DmaStore": 1,
+      "DmaScatter": 2
+    },
+    "context_busy_union_cycles": {
+      "DmaEngine": 66835,
+      "PeCore": 792,
+      "MainContext": 40439,
+      "VectorEngine": 31153,
+      "SubContext": 10795
+    },
+    "sram_live_address_union_peak_bytes": 56639488,
+    "sram_live_address_union_peak_cycle": 33709,
+    "lut_setups": [
+      {
+        "load_index": "52",
+        "expand_index": "75",
+        "load_cycles": 838,
+        "expand_cycles": 1293,
+        "table_bytes": 8388608,
+        "consumer_indices": [
+          "84"
+        ]
+      },
+      {
+        "load_index": "147",
+        "expand_index": "155",
+        "load_cycles": 838,
+        "expand_cycles": 1293,
+        "table_bytes": 8388608,
+        "consumer_indices": [
+          "184"
+        ]
+      },
+      {
+        "load_index": "203",
+        "expand_index": "208",
+        "load_cycles": 838,
+        "expand_cycles": 1293,
+        "table_bytes": 8388608,
+        "consumer_indices": [
+          "311"
+        ]
+      }
+    ],
+    "operator_groups": [
+      {
+        "source": "--> src/device/shared/rmsnorm_grouped.rs:22:73",
+        "type": "DmaLoad",
+        "count": 1,
+        "duration_sum": 1406,
+        "durations": [
+          1406
+        ],
+        "begin": 1003,
+        "end": 2409
+      },
+      {
+        "source": "--> src/device/sliding/rope.rs:85:24",
+        "type": "Core",
+        "count": 2,
+        "duration_sum": 16,
+        "durations": [
+          6,
+          10
+        ],
+        "begin": 1000,
+        "end": 48086
+      },
+      {
+        "source": "--> src/device/sliding/rope.rs:96:13",
+        "type": "Core",
+        "count": 2,
+        "duration_sum": 16,
+        "durations": [
+          6,
+          10
+        ],
+        "begin": 1010,
+        "end": 1026
+      },
+      {
+        "source": "",
+        "type": "Core",
+        "count": 5,
+        "duration_sum": 640,
+        "durations": [
+          10,
+          600
+        ],
+        "begin": 1026,
+        "end": 75206
+      },
+      {
+        "source": "--> src/device/sliding/rope.rs:107:13",
+        "type": "Core",
+        "count": 2,
+        "duration_sum": 16,
+        "durations": [
+          6,
+          10
+        ],
+        "begin": 1036,
+        "end": 48451
+      },
+      {
+        "source": "--> src/device/sliding/rope.rs:86:25",
+        "type": "Core",
+        "count": 2,
+        "duration_sum": 16,
+        "durations": [
+          6,
+          10
+        ],
+        "begin": 1046,
+        "end": 48092
+      },
+      {
+        "source": "--> src/device/sliding/rope.rs:112:24",
+        "type": "Core",
+        "count": 2,
+        "duration_sum": 16,
+        "durations": [
+          6,
+          10
+        ],
+        "begin": 1066,
+        "end": 59659
+      },
+      {
+        "source": "--> src/device/sliding/rope.rs:122:22",
+        "type": "Core",
+        "count": 2,
+        "duration_sum": 16,
+        "durations": [
+          6,
+          10
+        ],
+        "begin": 1076,
+        "end": 1132
+      },
+      {
+        "source": "--> src/device/sliding/rope.rs:129:22",
+        "type": "Core",
+        "count": 2,
+        "duration_sum": 16,
+        "durations": [
+          6,
+          10
+        ],
+        "begin": 1096,
+        "end": 60016
+      },
+      {
+        "source": "--> src/device/sliding/rope.rs:113:25",
+        "type": "Core",
+        "count": 2,
+        "duration_sum": 16,
+        "durations": [
+          6,
+          10
+        ],
+        "begin": 1106,
+        "end": 59665
+      },
+      {
+        "source": "--> src/device/shared/rmsnorm_grouped.rs:24:80",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 401,
+        "durations": [
+          401
+        ],
+        "begin": 2409,
+        "end": 2810
+      },
+      {
+        "source": "--> src/device/shared/rmsnorm_grouped.rs:69:81",
+        "type": "DmaLoad",
+        "count": 1,
+        "duration_sum": 1406,
+        "durations": [
+          1406
+        ],
+        "begin": 2409,
+        "end": 3815
+      },
+      {
+        "source": "--> src/device/shared/rmsnorm_grouped.rs:41:98",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 347,
+        "durations": [
+          347
+        ],
+        "begin": 2810,
+        "end": 3157
+      },
+      {
+        "source": "--> src/device/shared/rmsnorm_grouped.rs:54:82",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 282,
+        "durations": [
+          282
+        ],
+        "begin": 3157,
+        "end": 3439
+      },
+      {
+        "source": "--> src/device/shared/rmsnorm_grouped.rs:78:77",
+        "type": "Sub",
+        "count": 1,
+        "duration_sum": 267,
+        "durations": [
+          267
+        ],
+        "begin": 3439,
+        "end": 3706
+      },
+      {
+        "source": "--> src/device/shared/rmsnorm_grouped.rs:70:82",
+        "type": "Sub",
+        "count": 1,
+        "duration_sum": 383,
+        "durations": [
+          383
+        ],
+        "begin": 3815,
+        "end": 4198
+      },
+      {
+        "source": "",
+        "type": "DmaLoad",
+        "count": 3,
+        "duration_sum": 2514,
+        "durations": [
+          838
+        ],
+        "begin": 3815,
+        "end": 51711
+      },
+      {
+        "source": "--> src/device/shared/rmsnorm_grouped.rs:85:81",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 401,
+        "durations": [
+          401
+        ],
+        "begin": 4198,
+        "end": 4599
+      },
+      {
+        "source": "--> src/device/shared/rmsnorm_grouped.rs:101:5",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 744,
+        "durations": [
+          744
+        ],
+        "begin": 4599,
+        "end": 5343
+      },
+      {
+        "source": "--> src/device/sliding/projection.rs:24:81",
+        "type": "DmaLoad",
+        "count": 1,
+        "duration_sum": 26475,
+        "durations": [
+          26475
+        ],
+        "begin": 4653,
+        "end": 31128
+      },
+      {
+        "source": "--> src/device/sliding/projection.rs:17:74",
+        "type": "Sub",
+        "count": 1,
+        "duration_sum": 1223,
+        "durations": [
+          1223
+        ],
+        "begin": 5343,
+        "end": 6566
+      },
+      {
+        "source": "",
+        "type": "Sub",
+        "count": 3,
+        "duration_sum": 3879,
+        "durations": [
+          1293
+        ],
+        "begin": 6566,
+        "end": 53004
+      },
+      {
+        "source": "--> src/device/sliding/projection.rs:147:71",
+        "type": "Sub",
+        "count": 1,
+        "duration_sum": 1223,
+        "durations": [
+          1223
+        ],
+        "begin": 7859,
+        "end": 9082
+      },
+      {
+        "source": "--> src/device/sliding/projection.rs:25:78",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 9863,
+        "durations": [
+          9863
+        ],
+        "begin": 31128,
+        "end": 40991
+      },
+      {
+        "source": "--> src/device/sliding/projection.rs:40:79",
+        "type": "DmaLoad",
+        "count": 1,
+        "duration_sum": 753,
+        "durations": [
+          753
+        ],
+        "begin": 31207,
+        "end": 31960
+      },
+      {
+        "source": "--> src/device/sliding/projection.rs:41:83",
+        "type": "Sub",
+        "count": 1,
+        "duration_sum": 267,
+        "durations": [
+          267
+        ],
+        "begin": 31960,
+        "end": 32227
+      },
+      {
+        "source": "--> src/device/sliding/rmsnorm.rs:79:67",
+        "type": "DmaLoad",
+        "count": 2,
+        "duration_sum": 900,
+        "durations": [
+          450
+        ],
+        "begin": 31960,
+        "end": 50873
+      },
+      {
+        "source": "--> src/device/sliding/rmsnorm.rs:81:5",
+        "type": "Sub",
+        "count": 2,
+        "duration_sum": 654,
+        "durations": [
+          327
+        ],
+        "begin": 32410,
+        "end": 51200
+      },
+      {
+        "source": "--> src/device/sliding/rope.rs:21:61",
+        "type": "DmaGather",
+        "count": 1,
+        "duration_sum": 934,
+        "durations": [
+          934
+        ],
+        "begin": 32410,
+        "end": 33344
+      },
+      {
+        "source": "--> src/device/sliding/rope.rs:24:75",
+        "type": "DmaStos",
+        "count": 1,
+        "duration_sum": 362,
+        "durations": [
+          362
+        ],
+        "begin": 33344,
+        "end": 33706
+      },
+      {
+        "source": "--> src/device/sliding/rope.rs:27:79",
+        "type": "Sub",
+        "count": 1,
+        "duration_sum": 327,
+        "durations": [
+          327
+        ],
+        "begin": 33706,
+        "end": 34033
+      },
+      {
+        "source": "--> src/device/sliding/projection.rs:85:77",
+        "type": "DmaLoad",
+        "count": 2,
+        "duration_sum": 27024,
+        "durations": [
+          13512
+        ],
+        "begin": 33709,
+        "end": 65223
+      },
+      {
+        "source": "--> src/device/sliding/projection.rs:49:73",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 285,
+        "durations": [
+          285
+        ],
+        "begin": 40991,
+        "end": 41276
+      },
+      {
+        "source": "--> src/device/sliding/projection.rs:65:64",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 1032,
+        "durations": [
+          1032
+        ],
+        "begin": 41276,
+        "end": 42308
+      },
+      {
+        "source": "--> src/device/sliding/rmsnorm.rs:15:72",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 1304,
+        "durations": [
+          1304
+        ],
+        "begin": 42308,
+        "end": 43612
+      },
+      {
+        "source": "--> src/device/sliding/rmsnorm.rs:35:64",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 285,
+        "durations": [
+          285
+        ],
+        "begin": 43612,
+        "end": 43897
+      },
+      {
+        "source": "--> src/device/sliding/rmsnorm.rs:51:69",
+        "type": "Sub",
+        "count": 1,
+        "duration_sum": 271,
+        "durations": [
+          271
+        ],
+        "begin": 43897,
+        "end": 44168
+      },
+      {
+        "source": "--> src/device/sliding/rmsnorm.rs:58:5",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 1305,
+        "durations": [
+          1305
+        ],
+        "begin": 44168,
+        "end": 45473
+      },
+      {
+        "source": "--> src/device/sliding/rope.rs:43:84",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 2311,
+        "durations": [
+          2311
+        ],
+        "begin": 45473,
+        "end": 47784
+      },
+      {
+        "source": "--> src/device/sliding/rope.rs:69:77",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 296,
+        "durations": [
+          296
+        ],
+        "begin": 47784,
+        "end": 48080
+      },
+      {
+        "source": "--> src/device/sliding/rope.rs:22:61",
+        "type": "DmaGather",
+        "count": 1,
+        "duration_sum": 934,
+        "durations": [
+          934
+        ],
+        "begin": 48059,
+        "end": 48993
+      },
+      {
+        "source": "--> src/device/sliding/rope.rs:90:5",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 280,
+        "durations": [
+          280
+        ],
+        "begin": 48159,
+        "end": 48439
+      },
+      {
+        "source": "--> src/device/sliding/rope.rs:90:5",
+        "type": "Core",
+        "count": 1,
+        "duration_sum": 6,
+        "durations": [
+          6
+        ],
+        "begin": 48439,
+        "end": 48445
+      },
+      {
+        "source": "--> src/device/sliding/rope.rs:101:5",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 280,
+        "durations": [
+          280
+        ],
+        "begin": 48518,
+        "end": 48798
+      },
+      {
+        "source": "--> src/device/sliding/rope.rs:101:5",
+        "type": "Core",
+        "count": 1,
+        "duration_sum": 6,
+        "durations": [
+          6
+        ],
+        "begin": 48798,
+        "end": 48804
+      },
+      {
+        "source": "--> src/device/sliding/rope.rs:25:75",
+        "type": "DmaStos",
+        "count": 1,
+        "duration_sum": 362,
+        "durations": [
+          362
+        ],
+        "begin": 48993,
+        "end": 49355
+      },
+      {
+        "source": "--> src/device/sliding/projection.rs:86:74",
+        "type": "Main",
+        "count": 2,
+        "duration_sum": 10126,
+        "durations": [
+          5063
+        ],
+        "begin": 49431,
+        "end": 70286
+      },
+      {
+        "source": "--> src/device/sliding/rope.rs:35:79",
+        "type": "Sub",
+        "count": 1,
+        "duration_sum": 327,
+        "durations": [
+          327
+        ],
+        "begin": 49431,
+        "end": 49758
+      },
+      {
+        "source": "--> src/device/sliding/projection.rs:101:75",
+        "type": "DmaLoad",
+        "count": 2,
+        "duration_sum": 1584,
+        "durations": [
+          792
+        ],
+        "begin": 49631,
+        "end": 66015
+      },
+      {
+        "source": "--> src/device/sliding/projection.rs:102:79",
+        "type": "Sub",
+        "count": 2,
+        "duration_sum": 530,
+        "durations": [
+          265
+        ],
+        "begin": 50423,
+        "end": 66280
+      },
+      {
+        "source": "--> src/device/sliding/projection.rs:110:69",
+        "type": "Main",
+        "count": 2,
+        "duration_sum": 566,
+        "durations": [
+          283
+        ],
+        "begin": 54494,
+        "end": 70569
+      },
+      {
+        "source": "--> src/device/sliding/projection.rs:126:5",
+        "type": "Main",
+        "count": 2,
+        "duration_sum": 2064,
+        "durations": [
+          1032
+        ],
+        "begin": 54777,
+        "end": 71601
+      },
+      {
+        "source": "--> src/device/sliding/rmsnorm.rs:93:68",
+        "type": "Main",
+        "count": 2,
+        "duration_sum": 1584,
+        "durations": [
+          792
+        ],
+        "begin": 55809,
+        "end": 72393
+      },
+      {
+        "source": "--> src/device/sliding/rmsnorm.rs:113:60",
+        "type": "Main",
+        "count": 2,
+        "duration_sum": 566,
+        "durations": [
+          283
+        ],
+        "begin": 56601,
+        "end": 72676
+      },
+      {
+        "source": "--> src/device/sliding/rope.rs:132:80",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 409,
+        "durations": [
+          409
+        ],
+        "begin": 56884,
+        "end": 57293
+      },
+      {
+        "source": "--> src/device/sliding/rmsnorm.rs:127:5",
+        "type": "Sub",
+        "count": 2,
+        "duration_sum": 534,
+        "durations": [
+          267
+        ],
+        "begin": 56884,
+        "end": 72943
+      },
+      {
+        "source": "--> src/device/sliding/rmsnorm.rs:140:5",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 793,
+        "durations": [
+          793
+        ],
+        "begin": 57293,
+        "end": 58086
+      },
+      {
+        "source": "--> src/device/sliding/rope.rs:147:85",
+        "type": "Sub",
+        "count": 1,
+        "duration_sum": 519,
+        "durations": [
+          519
+        ],
+        "begin": 57293,
+        "end": 57812
+      },
+      {
+        "source": "--> src/device/sliding/rope.rs:56:80",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 1287,
+        "durations": [
+          1287
+        ],
+        "begin": 58086,
+        "end": 59373
+      },
+      {
+        "source": "--> src/device/sliding/rope.rs:77:73",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 280,
+        "durations": [
+          280
+        ],
+        "begin": 59373,
+        "end": 59653
+      },
+      {
+        "source": "--> src/device/sliding/rope.rs:117:5",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 272,
+        "durations": [
+          272
+        ],
+        "begin": 59732,
+        "end": 60004
+      },
+      {
+        "source": "--> src/device/sliding/rope.rs:117:5",
+        "type": "Core",
+        "count": 1,
+        "duration_sum": 6,
+        "durations": [
+          6
+        ],
+        "begin": 60004,
+        "end": 60010
+      },
+      {
+        "source": "--> src/device/sliding/rope.rs:124:5",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 272,
+        "durations": [
+          272
+        ],
+        "begin": 60083,
+        "end": 60355
+      },
+      {
+        "source": "--> src/device/sliding/rope.rs:124:5",
+        "type": "Core",
+        "count": 1,
+        "duration_sum": 6,
+        "durations": [
+          6
+        ],
+        "begin": 60355,
+        "end": 60361
+      },
+      {
+        "source": "--> src/device/sliding/rope.rs:173:76",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 345,
+        "durations": [
+          345
+        ],
+        "begin": 60355,
+        "end": 60700
+      },
+      {
+        "source": "--> src/device/sliding/rope.rs:155:84",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 409,
+        "durations": [
+          409
+        ],
+        "begin": 60700,
+        "end": 61109
+      },
+      {
+        "source": "--> src/device/sliding/rope.rs:188:81",
+        "type": "Sub",
+        "count": 1,
+        "duration_sum": 391,
+        "durations": [
+          391
+        ],
+        "begin": 60700,
+        "end": 61091
+      },
+      {
+        "source": "--> src/device/sliding/rope.rs:196:80",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 345,
+        "durations": [
+          345
+        ],
+        "begin": 61109,
+        "end": 61454
+      },
+      {
+        "source": "--> src/device/sliding/rope.rs:222:70",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 392,
+        "durations": [
+          392
+        ],
+        "begin": 61454,
+        "end": 61846
+      },
+      {
+        "source": "--> src/device/sliding/rope.rs:213:74",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 520,
+        "durations": [
+          520
+        ],
+        "begin": 61846,
+        "end": 62366
+      },
+      {
+        "source": "--> src/ops.rs:73:5",
+        "type": "DmaStore",
+        "count": 1,
+        "duration_sum": 441,
+        "durations": [
+          441
+        ],
+        "begin": 66015,
+        "end": 66456
+      },
+      {
+        "source": "--> src/ops.rs:74:5",
+        "type": "DmaScatter",
+        "count": 1,
+        "duration_sum": 870,
+        "durations": [
+          870
+        ],
+        "begin": 66456,
+        "end": 67326
+      },
+      {
+        "source": "--> src/device/sliding/rmsnorm.rs:162:5",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 793,
+        "durations": [
+          793
+        ],
+        "begin": 72943,
+        "end": 73736
+      },
+      {
+        "source": "--> src/ops.rs:69:5",
+        "type": "DmaScatter",
+        "count": 1,
+        "duration_sum": 870,
+        "durations": [
+          870
+        ],
+        "begin": 73736,
+        "end": 74606
+      }
+    ],
+    "largest_sram_tensors": [
+      {
+        "name": "vISA(T183)_i1_project_query_31",
+        "index": "39",
+        "buffer_type": "Sram",
+        "lifetime": {
+          "begin": 4653,
+          "end": 40991,
+          "block_begin": 0,
+          "block_end": 0
+        },
+        "address": 33554432,
+        "size": 31457280,
+        "physical_pages": [
+          1,
+          2
+        ],
+        "shape": "MappingShape[Chip: 1, Cluster: 1 # 2, Slice: Qs / 16, Element: (Qs % 16, H)]",
+        "fingerprint": null
+      },
+      {
+        "name": "vISA(T197)_i3_project_one_kv_matrix_22",
+        "index": "58",
+        "buffer_type": "Sram",
+        "lifetime": {
+          "begin": 33709,
+          "end": 54494,
+          "block_begin": 0,
+          "block_end": 0
+        },
+        "address": 67108864,
+        "size": 15728640,
+        "physical_pages": [
+          3
+        ],
+        "shape": "MappingShape[Chip: 1, Cluster: 1 # 2, Slice: Ps / 8, Element: (Ps % 8, H)]",
+        "fingerprint": null
+      },
+      {
+        "name": "vISA(T207)_i4_project_one_kv_matrix_22",
+        "index": "94",
+        "buffer_type": "Sram",
+        "lifetime": {
+          "begin": 51711,
+          "end": 70286,
+          "block_begin": 0,
+          "block_end": 0
+        },
+        "address": 33554432,
+        "size": 15728640,
+        "physical_pages": [
+          1
+        ],
+        "shape": "MappingShape[Chip: 1, Cluster: 1 # 2, Slice: Ps / 8, Element: (Ps % 8, H)]",
+        "fingerprint": null
+      },
+      {
+        "name": "",
+        "index": "72",
+        "buffer_type": "Sram",
+        "lifetime": {
+          "begin": 48059,
+          "end": 54494,
+          "block_begin": 0,
+          "block_end": 0
+        },
+        "address": 23068672,
+        "size": 8388608,
+        "physical_pages": [
+          2
+        ],
+        "shape": "",
+        "fingerprint": null
+      },
+      {
+        "name": "",
+        "index": "44",
+        "buffer_type": "Sram",
+        "lifetime": {
+          "begin": 6566,
+          "end": 40991,
+          "block_begin": 0,
+          "block_end": 0
+        },
+        "address": 5636096,
+        "size": 8388608,
+        "physical_pages": [
+          0
+        ],
+        "shape": "",
+        "fingerprint": null
+      },
+      {
+        "name": "",
+        "index": "93",
+        "buffer_type": "Sram",
+        "lifetime": {
+          "begin": 51711,
+          "end": 70286,
+          "block_begin": 0,
+          "block_end": 0
+        },
+        "address": 8388608,
+        "size": 8388608,
+        "physical_pages": [
+          0
+        ],
+        "shape": "",
+        "fingerprint": null
+      },
+      {
+        "name": "output",
+        "index": "61",
+        "buffer_type": "Sram",
+        "lifetime": {
+          "begin": 41276,
+          "end": 42308,
+          "block_begin": 0,
+          "block_end": 0
+        },
+        "address": 5505024,
+        "size": 4194304,
+        "physical_pages": [
+          0
+        ],
+        "shape": "MappingShape[Chip: 1, Cluster: 1 # 2, Slice: 1 # 256, Element: Qs]",
+        "fingerprint": null
+      },
+      {
+        "name": "vISA(T303)_69",
+        "index": "121",
+        "buffer_type": "Sram",
+        "lifetime": {
+          "begin": 61846,
+          "end": 66456,
+          "block_begin": 0,
+          "block_end": 0
+        },
+        "address": 4194304,
+        "size": 4194304,
+        "physical_pages": [
+          0
+        ],
+        "shape": "MappingShape[Chip: 1, Cluster: 1 # 2, Slice: 1 # 256, Element: (Ns, Gs, Ds)]",
+        "fingerprint": null
+      }
+    ]
+  },
+  "v3-control/decoder_feedforward.json": {
+    "makespan": 504130,
+    "instruction_count": 634,
+    "tensor_count": 449,
+    "instruction_types": {
+      "Sub": 70,
+      "DmaLoad": 17,
+      "Main": 108,
+      "Core": 435,
+      "DmaStos": 3,
+      "DmaStore": 1
+    },
+    "context_busy_union_cycles": {
+      "DmaEngine": 215617,
+      "SubContext": 27861,
+      "MainContext": 303780,
+      "VectorEngine": 248746,
+      "PeCore": 4272
+    },
+    "sram_live_address_union_peak_bytes": 194674688,
+    "sram_live_address_union_peak_cycle": 387879,
+    "lut_setups": [
+      {
+        "load_index": "2",
+        "expand_index": "8",
+        "load_cycles": 838,
+        "expand_cycles": 1293,
+        "table_bytes": 8388608,
+        "consumer_indices": [
+          "60"
+        ]
+      },
+      {
+        "load_index": "513",
+        "expand_index": "521",
+        "load_cycles": 838,
+        "expand_cycles": 1293,
+        "table_bytes": 8388608,
+        "consumer_indices": [
+          "527"
+        ]
+      },
+      {
+        "load_index": "972",
+        "expand_index": "982",
+        "load_cycles": 838,
+        "expand_cycles": 1293,
+        "table_bytes": 8388608,
+        "consumer_indices": [
+          "1026"
+        ]
+      }
+    ],
+    "operator_groups": [
+      {
+        "source": "",
+        "type": "DmaLoad",
+        "count": 3,
+        "duration_sum": 2514,
+        "durations": [
+          838
+        ],
+        "begin": 1003,
+        "end": 314810
+      },
+      {
+        "source": "",
+        "type": "Sub",
+        "count": 3,
+        "duration_sum": 3879,
+        "durations": [
+          1293
+        ],
+        "begin": 1841,
+        "end": 316103
+      },
+      {
+        "source": "--> src/device/shared/rmsnorm_grouped.rs:22:73",
+        "type": "DmaLoad",
+        "count": 1,
+        "duration_sum": 1406,
+        "durations": [
+          1406
+        ],
+        "begin": 1841,
+        "end": 3247
+      },
+      {
+        "source": "--> src/device/shared/rmsnorm_grouped.rs:24:80",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 401,
+        "durations": [
+          401
+        ],
+        "begin": 3247,
+        "end": 3648
+      },
+      {
+        "source": "--> src/device/shared/rmsnorm_grouped.rs:69:81",
+        "type": "DmaLoad",
+        "count": 1,
+        "duration_sum": 1406,
+        "durations": [
+          1406
+        ],
+        "begin": 3247,
+        "end": 4653
+      },
+      {
+        "source": "--> src/device/shared/rmsnorm_grouped.rs:41:98",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 347,
+        "durations": [
+          347
+        ],
+        "begin": 3648,
+        "end": 3995
+      },
+      {
+        "source": "--> src/device/shared/rmsnorm_grouped.rs:54:82",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 282,
+        "durations": [
+          282
+        ],
+        "begin": 3995,
+        "end": 4277
+      },
+      {
+        "source": "--> src/device/shared/rmsnorm_grouped.rs:78:77",
+        "type": "Sub",
+        "count": 1,
+        "duration_sum": 267,
+        "durations": [
+          267
+        ],
+        "begin": 4277,
+        "end": 4544
+      },
+      {
+        "source": "--> src/device/shared/rmsnorm_grouped.rs:70:82",
+        "type": "Sub",
+        "count": 1,
+        "duration_sum": 383,
+        "durations": [
+          383
+        ],
+        "begin": 4653,
+        "end": 5036
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:94:9",
+        "type": "DmaLoad",
+        "count": 1,
+        "duration_sum": 49157,
+        "durations": [
+          49157
+        ],
+        "begin": 4665,
+        "end": 53822
+      },
+      {
+        "source": "--> src/device/shared/rmsnorm_grouped.rs:85:81",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 401,
+        "durations": [
+          401
+        ],
+        "begin": 5036,
+        "end": 5437
+      },
+      {
+        "source": "--> src/device/shared/rmsnorm_grouped.rs:101:5",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 744,
+        "durations": [
+          744
+        ],
+        "begin": 5437,
+        "end": 6181
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:171:75",
+        "type": "Sub",
+        "count": 1,
+        "duration_sum": 1223,
+        "durations": [
+          1223
+        ],
+        "begin": 6181,
+        "end": 7404
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:95:90",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 18263,
+        "durations": [
+          18263
+        ],
+        "begin": 53846,
+        "end": 72109
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:105:9",
+        "type": "DmaLoad",
+        "count": 1,
+        "duration_sum": 8283,
+        "durations": [
+          8283
+        ],
+        "begin": 53846,
+        "end": 62129
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:111:17",
+        "type": "Core",
+        "count": 30,
+        "duration_sum": 240,
+        "durations": [
+          6,
+          10
+        ],
+        "begin": 1000,
+        "end": 153485
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:108:104",
+        "type": "Sub",
+        "count": 15,
+        "duration_sum": 5745,
+        "durations": [
+          383
+        ],
+        "begin": 72188,
+        "end": 153925
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:123:17",
+        "type": "Core",
+        "count": 30,
+        "duration_sum": 240,
+        "durations": [
+          6,
+          10
+        ],
+        "begin": 62135,
+        "end": 153501
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:151:26",
+        "type": "Core",
+        "count": 30,
+        "duration_sum": 240,
+        "durations": [
+          6,
+          10
+        ],
+        "begin": 72115,
+        "end": 153517
+      },
+      {
+        "source": "",
+        "type": "Core",
+        "count": 50,
+        "duration_sum": 1680,
+        "durations": [
+          10,
+          600
+        ],
+        "begin": 72131,
+        "end": 504130
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:120:89",
+        "type": "Main",
+        "count": 15,
+        "duration_sum": 61815,
+        "durations": [
+          4121
+        ],
+        "begin": 72574,
+        "end": 158049
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:140:9",
+        "type": "Main",
+        "count": 15,
+        "duration_sum": 18375,
+        "durations": [
+          1225
+        ],
+        "begin": 76695,
+        "end": 159274
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:140:9",
+        "type": "Core",
+        "count": 15,
+        "duration_sum": 90,
+        "durations": [
+          6
+        ],
+        "begin": 77920,
+        "end": 159280
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:31:9",
+        "type": "DmaLoad",
+        "count": 1,
+        "duration_sum": 49157,
+        "durations": [
+          49157
+        ],
+        "begin": 159353,
+        "end": 208510
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:32:88",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 18263,
+        "durations": [
+          18263
+        ],
+        "begin": 208510,
+        "end": 226773
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:42:9",
+        "type": "DmaLoad",
+        "count": 1,
+        "duration_sum": 8283,
+        "durations": [
+          8283
+        ],
+        "begin": 208510,
+        "end": 216793
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:48:17",
+        "type": "Core",
+        "count": 30,
+        "duration_sum": 240,
+        "durations": [
+          6,
+          10
+        ],
+        "begin": 159280,
+        "end": 308107
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:45:102",
+        "type": "Sub",
+        "count": 15,
+        "duration_sum": 5745,
+        "durations": [
+          383
+        ],
+        "begin": 226852,
+        "end": 308547
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:60:17",
+        "type": "Core",
+        "count": 30,
+        "duration_sum": 240,
+        "durations": [
+          6,
+          10
+        ],
+        "begin": 216799,
+        "end": 308123
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:88:26",
+        "type": "Core",
+        "count": 30,
+        "duration_sum": 240,
+        "durations": [
+          6,
+          10
+        ],
+        "begin": 226779,
+        "end": 308139
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:57:87",
+        "type": "Main",
+        "count": 15,
+        "duration_sum": 61815,
+        "durations": [
+          4121
+        ],
+        "begin": 227235,
+        "end": 312668
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:77:9",
+        "type": "Main",
+        "count": 15,
+        "duration_sum": 18375,
+        "durations": [
+          1225
+        ],
+        "begin": 231356,
+        "end": 313893
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:77:9",
+        "type": "Core",
+        "count": 15,
+        "duration_sum": 90,
+        "durations": [
+          6
+        ],
+        "begin": 232581,
+        "end": 313899
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:225:76",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 294,
+        "durations": [
+          294
+        ],
+        "begin": 313972,
+        "end": 314266
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:268:78",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 294,
+        "durations": [
+          294
+        ],
+        "begin": 314266,
+        "end": 314560
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:235:9",
+        "type": "DmaLoad",
+        "count": 1,
+        "duration_sum": 1328,
+        "durations": [
+          1328
+        ],
+        "begin": 315010,
+        "end": 316338
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:236:91",
+        "type": "Sub",
+        "count": 1,
+        "duration_sum": 267,
+        "durations": [
+          267
+        ],
+        "begin": 316338,
+        "end": 316605
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:260:9",
+        "type": "DmaLoad",
+        "count": 1,
+        "duration_sum": 1328,
+        "durations": [
+          1328
+        ],
+        "begin": 316338,
+        "end": 317666
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:243:76",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 311,
+        "durations": [
+          311
+        ],
+        "begin": 316605,
+        "end": 316916
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:261:93",
+        "type": "Sub",
+        "count": 1,
+        "duration_sum": 267,
+        "durations": [
+          267
+        ],
+        "begin": 317666,
+        "end": 317933
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:356:9",
+        "type": "DmaLoad",
+        "count": 1,
+        "duration_sum": 58302,
+        "durations": [
+          58302
+        ],
+        "begin": 317866,
+        "end": 376168
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:277:78",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 311,
+        "durations": [
+          311
+        ],
+        "begin": 317933,
+        "end": 318244
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:293:77",
+        "type": "Sub",
+        "count": 1,
+        "duration_sum": 343,
+        "durations": [
+          343
+        ],
+        "begin": 318244,
+        "end": 318587
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:312:82",
+        "type": "Sub",
+        "count": 1,
+        "duration_sum": 323,
+        "durations": [
+          323
+        ],
+        "begin": 318587,
+        "end": 318910
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:319:5",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 311,
+        "durations": [
+          311
+        ],
+        "begin": 318910,
+        "end": 319221
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:357:105",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 18263,
+        "durations": [
+          18263
+        ],
+        "begin": 376192,
+        "end": 394455
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:187:77",
+        "type": "DmaStos",
+        "count": 1,
+        "duration_sum": 11687,
+        "durations": [
+          11687
+        ],
+        "begin": 376192,
+        "end": 387879
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:345:89",
+        "type": "Sub",
+        "count": 1,
+        "duration_sum": 743,
+        "durations": [
+          743
+        ],
+        "begin": 387879,
+        "end": 388622
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:367:9",
+        "type": "DmaLoad",
+        "count": 1,
+        "duration_sum": 18998,
+        "durations": [
+          18998
+        ],
+        "begin": 387879,
+        "end": 406877
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:376:17",
+        "type": "Core",
+        "count": 20,
+        "duration_sum": 160,
+        "durations": [
+          6,
+          10
+        ],
+        "begin": 313899,
+        "end": 481401
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:373:119",
+        "type": "Sub",
+        "count": 10,
+        "duration_sum": 4430,
+        "durations": [
+          443
+        ],
+        "begin": 406956,
+        "end": 481901
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:388:17",
+        "type": "Core",
+        "count": 20,
+        "duration_sum": 160,
+        "durations": [
+          6,
+          10
+        ],
+        "begin": 406883,
+        "end": 481417
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:419:26",
+        "type": "Core",
+        "count": 20,
+        "duration_sum": 160,
+        "durations": [
+          6,
+          10
+        ],
+        "begin": 406899,
+        "end": 481433
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:385:105",
+        "type": "Main",
+        "count": 10,
+        "duration_sum": 60410,
+        "durations": [
+          6041
+        ],
+        "begin": 407402,
+        "end": 487945
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:405:9",
+        "type": "Main",
+        "count": 10,
+        "duration_sum": 17120,
+        "durations": [
+          1712
+        ],
+        "begin": 413443,
+        "end": 489657
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:405:9",
+        "type": "Core",
+        "count": 10,
+        "duration_sum": 60,
+        "durations": [
+          6
+        ],
+        "begin": 415155,
+        "end": 489663
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:191:9",
+        "type": "DmaLoad",
+        "count": 1,
+        "duration_sum": 447,
+        "durations": [
+          447
+        ],
+        "begin": 487945,
+        "end": 488392
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:192:82",
+        "type": "Sub",
+        "count": 1,
+        "duration_sum": 267,
+        "durations": [
+          267
+        ],
+        "begin": 489857,
+        "end": 490124
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:422:5",
+        "type": "DmaStos",
+        "count": 1,
+        "duration_sum": 898,
+        "durations": [
+          898
+        ],
+        "begin": 489857,
+        "end": 490755
+      },
+      {
+        "source": "--> src/device/shared/mlp.rs:199:61",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 1241,
+        "durations": [
+          1241
+        ],
+        "begin": 490755,
+        "end": 491996
+      },
+      {
+        "source": "--> src/device/shared/rmsnorm.rs:64:81",
+        "type": "DmaLoad",
+        "count": 1,
+        "duration_sum": 546,
+        "durations": [
+          546
+        ],
+        "begin": 490755,
+        "end": 491301
+      },
+      {
+        "source": "--> src/device/shared/rmsnorm.rs:65:82",
+        "type": "Sub",
+        "count": 1,
+        "duration_sum": 383,
+        "durations": [
+          383
+        ],
+        "begin": 491301,
+        "end": 491684
+      },
+      {
+        "source": "--> src/ops.rs:217:65",
+        "type": "DmaLoad",
+        "count": 1,
+        "duration_sum": 547,
+        "durations": [
+          547
+        ],
+        "begin": 491301,
+        "end": 491848
+      },
+      {
+        "source": "--> src/device/shared/rmsnorm.rs:17:73",
+        "type": "DmaStos",
+        "count": 1,
+        "duration_sum": 449,
+        "durations": [
+          449
+        ],
+        "begin": 491996,
+        "end": 492445
+      },
+      {
+        "source": "--> src/device/shared/rmsnorm.rs:19:80",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 401,
+        "durations": [
+          401
+        ],
+        "begin": 492445,
+        "end": 492846
+      },
+      {
+        "source": "--> src/device/shared/rmsnorm.rs:36:92",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 347,
+        "durations": [
+          347
+        ],
+        "begin": 492846,
+        "end": 493193
+      },
+      {
+        "source": "--> src/device/shared/rmsnorm.rs:49:76",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 282,
+        "durations": [
+          282
+        ],
+        "begin": 493193,
+        "end": 493475
+      },
+      {
+        "source": "--> src/device/shared/rmsnorm.rs:73:77",
+        "type": "Sub",
+        "count": 1,
+        "duration_sum": 267,
+        "durations": [
+          267
+        ],
+        "begin": 493475,
+        "end": 493742
+      },
+      {
+        "source": "--> src/device/shared/rmsnorm.rs:80:81",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 401,
+        "durations": [
+          401
+        ],
+        "begin": 493742,
+        "end": 494143
+      },
+      {
+        "source": "--> src/device/shared/rmsnorm.rs:96:5",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 744,
+        "durations": [
+          744
+        ],
+        "begin": 494143,
+        "end": 494887
+      },
+      {
+        "source": "--> src/device/shared/residual.rs:19:29",
+        "type": "Core",
+        "count": 16,
+        "duration_sum": 128,
+        "durations": [
+          6,
+          10
+        ],
+        "begin": 489663,
+        "end": 500530
+      },
+      {
+        "source": "--> src/device/shared/residual.rs:21:79",
+        "type": "Sub",
+        "count": 8,
+        "duration_sum": 3064,
+        "durations": [
+          383
+        ],
+        "begin": 494966,
+        "end": 500970
+      },
+      {
+        "source": "--> src/device/shared/residual.rs:40:26",
+        "type": "Core",
+        "count": 16,
+        "duration_sum": 128,
+        "durations": [
+          6,
+          10
+        ],
+        "begin": 491854,
+        "end": 500546
+      },
+      {
+        "source": "--> src/device/shared/residual.rs:18:22",
+        "type": "Core",
+        "count": 16,
+        "duration_sum": 128,
+        "durations": [
+          6,
+          10
+        ],
+        "begin": 491870,
+        "end": 500562
+      },
+      {
+        "source": "--> src/device/shared/residual.rs:29:9",
+        "type": "Main",
+        "count": 8,
+        "duration_sum": 2728,
+        "durations": [
+          341
+        ],
+        "begin": 495349,
+        "end": 501311
+      },
+      {
+        "source": "--> src/device/shared/residual.rs:29:9",
+        "type": "Core",
+        "count": 8,
+        "duration_sum": 48,
+        "durations": [
+          6
+        ],
+        "begin": 495690,
+        "end": 501317
+      },
+      {
+        "source": "--> src/device/shared/residual.rs:51:67",
+        "type": "DmaLoad",
+        "count": 1,
+        "duration_sum": 447,
+        "durations": [
+          447
+        ],
+        "begin": 500970,
+        "end": 501417
+      },
+      {
+        "source": "--> src/device/shared/residual.rs:52:67",
+        "type": "Sub",
+        "count": 1,
+        "duration_sum": 265,
+        "durations": [
+          265
+        ],
+        "begin": 501590,
+        "end": 501855
+      },
+      {
+        "source": "--> src/device/shared/residual.rs:60:5",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 1241,
+        "durations": [
+          1241
+        ],
+        "begin": 501855,
+        "end": 503096
+      },
+      {
+        "source": "--> src/ops.rs:238:5",
+        "type": "DmaStore",
+        "count": 1,
+        "duration_sum": 434,
+        "durations": [
+          434
+        ],
+        "begin": 503096,
+        "end": 503530
+      }
+    ],
+    "largest_sram_tensors": [
+      {
+        "name": "down_weight_packed",
+        "index": "417",
+        "buffer_type": "Sram",
+        "lifetime": {
+          "begin": 376192,
+          "end": 481417,
+          "block_begin": 0,
+          "block_end": 0
+        },
+        "address": 88997888,
+        "size": 117964800,
+        "physical_pages": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          0
+        ],
+        "shape": "MappingShape[Chip: 1, Cluster: 1 # 2, Slice: (H / 120, L / 1920), Element: (H % 120, L % 1920)]",
+        "fingerprint": null
+      },
+      {
+        "name": "up_weight_packed",
+        "index": "211",
+        "buffer_type": "Sram",
+        "lifetime": {
+          "begin": 208510,
+          "end": 308123,
+          "block_begin": 0,
+          "block_end": 0
+        },
+        "address": 98172928,
+        "size": 117964800,
+        "physical_pages": [
+          0,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "shape": "MappingShape[Chip: 1, Cluster: 1 # 2, Slice: L / 60, Element: (L % 60, H)]",
+        "fingerprint": null
+      },
+      {
+        "name": "gate_weight_packed",
+        "index": "21",
+        "buffer_type": "Sram",
+        "lifetime": {
+          "begin": 53846,
+          "end": 153501,
+          "block_begin": 0,
+          "block_end": 0
+        },
+        "address": 98041856,
+        "size": 117964800,
+        "physical_pages": [
+          0,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "shape": "MappingShape[Chip: 1, Cluster: 1 # 2, Slice: L / 60, Element: (L % 60, H)]",
+        "fingerprint": null
+      },
+      {
+        "name": "vISA(T165)_i2_project_up_and_gate_19",
+        "index": "209",
+        "buffer_type": "Sram",
+        "lifetime": {
+          "begin": 159353,
+          "end": 226773,
+          "block_begin": 0,
+          "block_end": 0
+        },
+        "address": 16777216,
+        "size": 58982400,
+        "physical_pages": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "shape": "MappingShape[Chip: 1, Cluster: 1 # 2, Slice: L / 60, Element: (L % 60, H)]",
+        "fingerprint": null
+      },
+      {
+        "name": "vISA(T181)_i2_project_up_and_gate_107",
+        "index": "15",
+        "buffer_type": "Sram",
+        "lifetime": {
+          "begin": 4665,
+          "end": 72109,
+          "block_begin": 0,
+          "block_end": 0
+        },
+        "address": 16777216,
+        "size": 58982400,
+        "physical_pages": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "shape": "MappingShape[Chip: 1, Cluster: 1 # 2, Slice: L / 60, Element: (L % 60, H)]",
+        "fingerprint": null
+      },
+      {
+        "name": "vISA(T220)_i4_project_down_24",
+        "index": "410",
+        "buffer_type": "Sram",
+        "lifetime": {
+          "begin": 317866,
+          "end": 394455,
+          "block_begin": 0,
+          "block_end": 0
+        },
+        "address": 16777216,
+        "size": 58982400,
+        "physical_pages": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "shape": "MappingShape[Chip: 1, Cluster: 1 # 2, Slice: (H / 120, L / 1920), Element: (H % 120, L % 1920)]",
+        "fingerprint": null
+      },
+      {
+        "name": "vISA(T230)_i4_project_down_93",
+        "index": "432",
+        "buffer_type": "Sram",
+        "lifetime": {
+          "begin": 407402,
+          "end": 415155,
+          "block_begin": 0,
+          "block_end": 0
+        },
+        "address": 52166656,
+        "size": 23592960,
+        "physical_pages": [
+          1,
+          4
+        ],
+        "shape": "MappingShape[Chip: 1, Cluster: 1 # 2, Slice: (H / 120, L / 1920), Element: (H % 120 = 12, L % 1920)]",
+        "fingerprint": null
+      },
+      {
+        "name": "vISA(T230)_i4_project_down_93",
+        "index": "444",
+        "buffer_type": "Sram",
+        "lifetime": {
+          "begin": 415680,
+          "end": 423433,
+          "block_begin": 0,
+          "block_end": 0
+        },
+        "address": 52166656,
+        "size": 23592960,
+        "physical_pages": [
+          1,
+          4
+        ],
+        "shape": "MappingShape[Chip: 1, Cluster: 1 # 2, Slice: (H / 120, L / 1920), Element: (H % 120 = 12, L % 1920)]",
+        "fingerprint": null
+      }
+    ]
+  },
+  "v3-control/sliding_attention_output.json": {
+    "makespan": 62816,
+    "instruction_count": 279,
+    "tensor_count": 187,
+    "instruction_types": {
+      "Sub": 31,
+      "DmaLoad": 6,
+      "Main": 29,
+      "Core": 210,
+      "DmaStos": 2,
+      "DmaStore": 1
+    },
+    "context_busy_union_cycles": {
+      "DmaEngine": 33204,
+      "SubContext": 9486,
+      "MainContext": 18996,
+      "VectorEngine": 18996,
+      "PeCore": 2672
+    },
+    "sram_live_address_union_peak_bytes": 40894464,
+    "sram_live_address_union_peak_cycle": 3937,
+    "lut_setups": [
+      {
+        "load_index": "3",
+        "expand_index": "9",
+        "load_cycles": 838,
+        "expand_cycles": 1293,
+        "table_bytes": 8388608,
+        "consumer_indices": [
+          "22"
+        ]
+      }
+    ],
+    "operator_groups": [
+      {
+        "source": "",
+        "type": "DmaLoad",
+        "count": 1,
+        "duration_sum": 838,
+        "durations": [
+          838
+        ],
+        "begin": 1003,
+        "end": 1841
+      },
+      {
+        "source": "",
+        "type": "Sub",
+        "count": 1,
+        "duration_sum": 1293,
+        "durations": [
+          1293
+        ],
+        "begin": 1841,
+        "end": 3134
+      },
+      {
+        "source": "--> src/device/sliding/projection.rs:169:80",
+        "type": "DmaLoad",
+        "count": 1,
+        "duration_sum": 2090,
+        "durations": [
+          2090
+        ],
+        "begin": 1841,
+        "end": 3931
+      },
+      {
+        "source": "--> src/device/sliding/projection.rs:170:92",
+        "type": "Sub",
+        "count": 1,
+        "duration_sum": 519,
+        "durations": [
+          519
+        ],
+        "begin": 3931,
+        "end": 4450
+      },
+      {
+        "source": "--> src/device/sliding/projection.rs:176:98",
+        "type": "DmaLoad",
+        "count": 1,
+        "duration_sum": 26734,
+        "durations": [
+          26734
+        ],
+        "begin": 3937,
+        "end": 30671
+      },
+      {
+        "source": "--> src/device/sliding/projection.rs:177:78",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 9863,
+        "durations": [
+          9863
+        ],
+        "begin": 30671,
+        "end": 40534
+      },
+      {
+        "source": "--> src/device/sliding/projection.rs:207:72",
+        "type": "DmaLoad",
+        "count": 1,
+        "duration_sum": 614,
+        "durations": [
+          614
+        ],
+        "begin": 30671,
+        "end": 31285
+      },
+      {
+        "source": "--> src/device/sliding/projection.rs:214:20",
+        "type": "Core",
+        "count": 30,
+        "duration_sum": 240,
+        "durations": [
+          6,
+          10
+        ],
+        "begin": 1000,
+        "end": 49306
+      },
+      {
+        "source": "--> src/device/sliding/projection.rs:212:88",
+        "type": "Sub",
+        "count": 15,
+        "duration_sum": 3960,
+        "durations": [
+          264
+        ],
+        "begin": 40613,
+        "end": 49627
+      },
+      {
+        "source": "--> src/device/sliding/projection.rs:232:26",
+        "type": "Core",
+        "count": 30,
+        "duration_sum": 240,
+        "durations": [
+          6,
+          10
+        ],
+        "begin": 31291,
+        "end": 49322
+      },
+      {
+        "source": "--> src/device/sliding/projection.rs:220:20",
+        "type": "Core",
+        "count": 30,
+        "duration_sum": 240,
+        "durations": [
+          6,
+          10
+        ],
+        "begin": 31307,
+        "end": 49338
+      },
+      {
+        "source": "",
+        "type": "Core",
+        "count": 25,
+        "duration_sum": 1430,
+        "durations": [
+          10,
+          600
+        ],
+        "begin": 40540,
+        "end": 62816
+      },
+      {
+        "source": "--> src/device/sliding/projection.rs:219:9",
+        "type": "Main",
+        "count": 15,
+        "duration_sum": 4230,
+        "durations": [
+          282
+        ],
+        "begin": 40877,
+        "end": 49909
+      },
+      {
+        "source": "--> src/device/sliding/projection.rs:219:9",
+        "type": "Core",
+        "count": 15,
+        "duration_sum": 90,
+        "durations": [
+          6
+        ],
+        "begin": 41159,
+        "end": 49915
+      },
+      {
+        "source": "--> src/device/sliding/projection.rs:196:5",
+        "type": "DmaStos",
+        "count": 1,
+        "duration_sum": 952,
+        "durations": [
+          952
+        ],
+        "begin": 49909,
+        "end": 50861
+      },
+      {
+        "source": "--> src/device/shared/rmsnorm.rs:17:73",
+        "type": "DmaStos",
+        "count": 1,
+        "duration_sum": 449,
+        "durations": [
+          449
+        ],
+        "begin": 50861,
+        "end": 51310
+      },
+      {
+        "source": "--> src/device/shared/rmsnorm.rs:19:80",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 401,
+        "durations": [
+          401
+        ],
+        "begin": 51310,
+        "end": 51711
+      },
+      {
+        "source": "--> src/device/shared/rmsnorm.rs:64:81",
+        "type": "DmaLoad",
+        "count": 1,
+        "duration_sum": 546,
+        "durations": [
+          546
+        ],
+        "begin": 51310,
+        "end": 51856
+      },
+      {
+        "source": "--> src/device/shared/rmsnorm.rs:36:92",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 347,
+        "durations": [
+          347
+        ],
+        "begin": 51711,
+        "end": 52058
+      },
+      {
+        "source": "--> src/device/shared/rmsnorm.rs:65:82",
+        "type": "Sub",
+        "count": 1,
+        "duration_sum": 383,
+        "durations": [
+          383
+        ],
+        "begin": 51856,
+        "end": 52239
+      },
+      {
+        "source": "--> src/ops.rs:142:65",
+        "type": "DmaLoad",
+        "count": 1,
+        "duration_sum": 547,
+        "durations": [
+          547
+        ],
+        "begin": 52056,
+        "end": 52603
+      },
+      {
+        "source": "--> src/device/shared/rmsnorm.rs:49:76",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 282,
+        "durations": [
+          282
+        ],
+        "begin": 52058,
+        "end": 52340
+      },
+      {
+        "source": "--> src/device/shared/rmsnorm.rs:73:77",
+        "type": "Sub",
+        "count": 1,
+        "duration_sum": 267,
+        "durations": [
+          267
+        ],
+        "begin": 52340,
+        "end": 52607
+      },
+      {
+        "source": "--> src/device/shared/rmsnorm.rs:80:81",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 401,
+        "durations": [
+          401
+        ],
+        "begin": 52607,
+        "end": 53008
+      },
+      {
+        "source": "--> src/device/shared/rmsnorm.rs:96:5",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 744,
+        "durations": [
+          744
+        ],
+        "begin": 53008,
+        "end": 53752
+      },
+      {
+        "source": "--> src/device/shared/residual.rs:19:29",
+        "type": "Core",
+        "count": 16,
+        "duration_sum": 128,
+        "durations": [
+          6,
+          10
+        ],
+        "begin": 49915,
+        "end": 59395
+      },
+      {
+        "source": "--> src/device/shared/residual.rs:21:79",
+        "type": "Sub",
+        "count": 8,
+        "duration_sum": 3064,
+        "durations": [
+          383
+        ],
+        "begin": 53831,
+        "end": 59835
+      },
+      {
+        "source": "--> src/device/shared/residual.rs:40:26",
+        "type": "Core",
+        "count": 16,
+        "duration_sum": 128,
+        "durations": [
+          6,
+          10
+        ],
+        "begin": 52609,
+        "end": 59411
+      },
+      {
+        "source": "--> src/device/shared/residual.rs:18:22",
+        "type": "Core",
+        "count": 16,
+        "duration_sum": 128,
+        "durations": [
+          6,
+          10
+        ],
+        "begin": 52625,
+        "end": 59427
+      },
+      {
+        "source": "--> src/device/shared/residual.rs:29:9",
+        "type": "Main",
+        "count": 8,
+        "duration_sum": 2728,
+        "durations": [
+          341
+        ],
+        "begin": 54214,
+        "end": 60176
+      },
+      {
+        "source": "--> src/device/shared/residual.rs:29:9",
+        "type": "Core",
+        "count": 8,
+        "duration_sum": 48,
+        "durations": [
+          6
+        ],
+        "begin": 54555,
+        "end": 60182
+      },
+      {
+        "source": "--> src/ops.rs:144:5",
+        "type": "DmaStore",
+        "count": 1,
+        "duration_sum": 434,
+        "durations": [
+          434
+        ],
+        "begin": 61782,
+        "end": 62216
+      }
+    ],
+    "largest_sram_tensors": [
+      {
+        "name": "vISA(T60)_i0_project_output_hbm_39",
+        "index": "8",
+        "buffer_type": "Sram",
+        "lifetime": {
+          "begin": 3937,
+          "end": 40534,
+          "block_begin": 0,
+          "block_end": 0
+        },
+        "address": 16777216,
+        "size": 31457280,
+        "physical_pages": [
+          1,
+          2
+        ],
+        "shape": "MappingShape[Chip: 1, Cluster: 1 # 2, Slice: (H / 60, Qs / 1024), Element: (H % 60, Qs % 1024)]",
+        "fingerprint": null
+      },
+      {
+        "name": "",
+        "index": "5",
+        "buffer_type": "Sram",
+        "lifetime": {
+          "begin": 1841,
+          "end": 40534,
+          "block_begin": 0,
+          "block_end": 0
+        },
+        "address": 262144,
+        "size": 8388608,
+        "physical_pages": [
+          0
+        ],
+        "shape": "",
+        "fingerprint": null
+      },
+      {
+        "name": "vISA(T101)_i3_add_36",
+        "index": "207",
+        "buffer_type": "Sram",
+        "lifetime": {
+          "begin": 54555,
+          "end": 54561,
+          "block_begin": 0,
+          "block_end": 0
+        },
+        "address": 8126464,
+        "size": 3932160,
+        "physical_pages": [
+          0
+        ],
+        "shape": "",
+        "fingerprint": null
+      },
+      {
+        "name": "vISA(T101)_i3_add_36",
+        "index": "218",
+        "buffer_type": "Sram",
+        "lifetime": {
+          "begin": 55358,
+          "end": 55364,
+          "block_begin": 0,
+          "block_end": 0
+        },
+        "address": 8126464,
+        "size": 3932160,
+        "physical_pages": [
+          0
+        ],
+        "shape": "",
+        "fingerprint": null
+      },
+      {
+        "name": "vISA(T101)_i3_add_36",
+        "index": "229",
+        "buffer_type": "Sram",
+        "lifetime": {
+          "begin": 56161,
+          "end": 56167,
+          "block_begin": 0,
+          "block_end": 0
+        },
+        "address": 8126464,
+        "size": 3932160,
+        "physical_pages": [
+          0
+        ],
+        "shape": "",
+        "fingerprint": null
+      },
+      {
+        "name": "vISA(T101)_i3_add_36",
+        "index": "240",
+        "buffer_type": "Sram",
+        "lifetime": {
+          "begin": 56964,
+          "end": 56970,
+          "block_begin": 0,
+          "block_end": 0
+        },
+        "address": 8126464,
+        "size": 3932160,
+        "physical_pages": [
+          0
+        ],
+        "shape": "",
+        "fingerprint": null
+      },
+      {
+        "name": "vISA(T101)_i3_add_36",
+        "index": "251",
+        "buffer_type": "Sram",
+        "lifetime": {
+          "begin": 57767,
+          "end": 57773,
+          "block_begin": 0,
+          "block_end": 0
+        },
+        "address": 8126464,
+        "size": 3932160,
+        "physical_pages": [
+          0
+        ],
+        "shape": "",
+        "fingerprint": null
+      },
+      {
+        "name": "vISA(T101)_i3_add_36",
+        "index": "262",
+        "buffer_type": "Sram",
+        "lifetime": {
+          "begin": 58570,
+          "end": 58576,
+          "block_begin": 0,
+          "block_end": 0
+        },
+        "address": 8126464,
+        "size": 3932160,
+        "physical_pages": [
+          0
+        ],
+        "shape": "",
+        "fingerprint": null
+      }
+    ]
+  },
+  "v3-control/sliding_project_qkv.json": {
+    "makespan": 75209,
+    "instruction_count": 124,
+    "tensor_count": 103,
+    "instruction_types": {
+      "Sub": 37,
+      "DmaLoad": 13,
+      "Core": 28,
+      "Main": 39,
+      "DmaGather": 2,
+      "DmaStos": 2,
+      "DmaStore": 1,
+      "DmaScatter": 2
+    },
+    "context_busy_union_cycles": {
+      "DmaEngine": 66835,
+      "PeCore": 792,
+      "MainContext": 41097,
+      "VectorEngine": 31811,
+      "SubContext": 10795
+    },
+    "sram_live_address_union_peak_bytes": 56639488,
+    "sram_live_address_union_peak_cycle": 33709,
+    "lut_setups": [
+      {
+        "load_index": "52",
+        "expand_index": "75",
+        "load_cycles": 838,
+        "expand_cycles": 1293,
+        "table_bytes": 8388608,
+        "consumer_indices": [
+          "84"
+        ]
+      },
+      {
+        "load_index": "147",
+        "expand_index": "155",
+        "load_cycles": 838,
+        "expand_cycles": 1293,
+        "table_bytes": 8388608,
+        "consumer_indices": [
+          "189"
+        ]
+      },
+      {
+        "load_index": "208",
+        "expand_index": "213",
+        "load_cycles": 838,
+        "expand_cycles": 1293,
+        "table_bytes": 8388608,
+        "consumer_indices": [
+          "321"
+        ]
+      }
+    ],
+    "operator_groups": [
+      {
+        "source": "--> src/device/shared/rmsnorm_grouped.rs:22:73",
+        "type": "DmaLoad",
+        "count": 1,
+        "duration_sum": 1406,
+        "durations": [
+          1406
+        ],
+        "begin": 1003,
+        "end": 2409
+      },
+      {
+        "source": "--> src/device/sliding/rope.rs:85:24",
+        "type": "Core",
+        "count": 2,
+        "duration_sum": 16,
+        "durations": [
+          6,
+          10
+        ],
+        "begin": 1000,
+        "end": 48086
+      },
+      {
+        "source": "--> src/device/sliding/rope.rs:96:13",
+        "type": "Core",
+        "count": 2,
+        "duration_sum": 16,
+        "durations": [
+          6,
+          10
+        ],
+        "begin": 1010,
+        "end": 1026
+      },
+      {
+        "source": "",
+        "type": "Core",
+        "count": 5,
+        "duration_sum": 640,
+        "durations": [
+          10,
+          600
+        ],
+        "begin": 1026,
+        "end": 75209
+      },
+      {
+        "source": "--> src/device/sliding/rope.rs:107:13",
+        "type": "Core",
+        "count": 2,
+        "duration_sum": 16,
+        "durations": [
+          6,
+          10
+        ],
+        "begin": 1036,
+        "end": 48451
+      },
+      {
+        "source": "--> src/device/sliding/rope.rs:86:25",
+        "type": "Core",
+        "count": 2,
+        "duration_sum": 16,
+        "durations": [
+          6,
+          10
+        ],
+        "begin": 1046,
+        "end": 48092
+      },
+      {
+        "source": "--> src/device/sliding/rope.rs:112:24",
+        "type": "Core",
+        "count": 2,
+        "duration_sum": 16,
+        "durations": [
+          6,
+          10
+        ],
+        "begin": 1066,
+        "end": 59659
+      },
+      {
+        "source": "--> src/device/sliding/rope.rs:122:22",
+        "type": "Core",
+        "count": 2,
+        "duration_sum": 16,
+        "durations": [
+          6,
+          10
+        ],
+        "begin": 1076,
+        "end": 1132
+      },
+      {
+        "source": "--> src/device/sliding/rope.rs:129:22",
+        "type": "Core",
+        "count": 2,
+        "duration_sum": 16,
+        "durations": [
+          6,
+          10
+        ],
+        "begin": 1096,
+        "end": 60016
+      },
+      {
+        "source": "--> src/device/sliding/rope.rs:113:25",
+        "type": "Core",
+        "count": 2,
+        "duration_sum": 16,
+        "durations": [
+          6,
+          10
+        ],
+        "begin": 1106,
+        "end": 59665
+      },
+      {
+        "source": "--> src/device/shared/rmsnorm_grouped.rs:24:80",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 401,
+        "durations": [
+          401
+        ],
+        "begin": 2409,
+        "end": 2810
+      },
+      {
+        "source": "--> src/device/shared/rmsnorm_grouped.rs:69:81",
+        "type": "DmaLoad",
+        "count": 1,
+        "duration_sum": 1406,
+        "durations": [
+          1406
+        ],
+        "begin": 2409,
+        "end": 3815
+      },
+      {
+        "source": "--> src/device/shared/rmsnorm_grouped.rs:41:98",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 347,
+        "durations": [
+          347
+        ],
+        "begin": 2810,
+        "end": 3157
+      },
+      {
+        "source": "--> src/device/shared/rmsnorm_grouped.rs:54:82",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 282,
+        "durations": [
+          282
+        ],
+        "begin": 3157,
+        "end": 3439
+      },
+      {
+        "source": "--> src/device/shared/rmsnorm_grouped.rs:78:77",
+        "type": "Sub",
+        "count": 1,
+        "duration_sum": 267,
+        "durations": [
+          267
+        ],
+        "begin": 3439,
+        "end": 3706
+      },
+      {
+        "source": "--> src/device/shared/rmsnorm_grouped.rs:70:82",
+        "type": "Sub",
+        "count": 1,
+        "duration_sum": 383,
+        "durations": [
+          383
+        ],
+        "begin": 3815,
+        "end": 4198
+      },
+      {
+        "source": "",
+        "type": "DmaLoad",
+        "count": 3,
+        "duration_sum": 2514,
+        "durations": [
+          838
+        ],
+        "begin": 3815,
+        "end": 51711
+      },
+      {
+        "source": "--> src/device/shared/rmsnorm_grouped.rs:85:81",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 401,
+        "durations": [
+          401
+        ],
+        "begin": 4198,
+        "end": 4599
+      },
+      {
+        "source": "--> src/device/shared/rmsnorm_grouped.rs:101:5",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 744,
+        "durations": [
+          744
+        ],
+        "begin": 4599,
+        "end": 5343
+      },
+      {
+        "source": "--> src/device/sliding/projection.rs:24:81",
+        "type": "DmaLoad",
+        "count": 1,
+        "duration_sum": 26475,
+        "durations": [
+          26475
+        ],
+        "begin": 4653,
+        "end": 31128
+      },
+      {
+        "source": "--> src/device/sliding/projection.rs:17:74",
+        "type": "Sub",
+        "count": 1,
+        "duration_sum": 1223,
+        "durations": [
+          1223
+        ],
+        "begin": 5343,
+        "end": 6566
+      },
+      {
+        "source": "",
+        "type": "Sub",
+        "count": 3,
+        "duration_sum": 3879,
+        "durations": [
+          1293
+        ],
+        "begin": 6566,
+        "end": 53004
+      },
+      {
+        "source": "--> src/device/sliding/projection.rs:147:71",
+        "type": "Sub",
+        "count": 1,
+        "duration_sum": 1223,
+        "durations": [
+          1223
+        ],
+        "begin": 7859,
+        "end": 9082
+      },
+      {
+        "source": "--> src/device/sliding/projection.rs:25:78",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 9863,
+        "durations": [
+          9863
+        ],
+        "begin": 31128,
+        "end": 40991
+      },
+      {
+        "source": "--> src/device/sliding/projection.rs:40:79",
+        "type": "DmaLoad",
+        "count": 1,
+        "duration_sum": 753,
+        "durations": [
+          753
+        ],
+        "begin": 31207,
+        "end": 31960
+      },
+      {
+        "source": "--> src/device/sliding/projection.rs:41:83",
+        "type": "Sub",
+        "count": 1,
+        "duration_sum": 267,
+        "durations": [
+          267
+        ],
+        "begin": 31960,
+        "end": 32227
+      },
+      {
+        "source": "--> src/device/sliding/rmsnorm.rs:79:67",
+        "type": "DmaLoad",
+        "count": 2,
+        "duration_sum": 900,
+        "durations": [
+          450
+        ],
+        "begin": 31960,
+        "end": 50873
+      },
+      {
+        "source": "--> src/device/sliding/rmsnorm.rs:81:5",
+        "type": "Sub",
+        "count": 2,
+        "duration_sum": 654,
+        "durations": [
+          327
+        ],
+        "begin": 32410,
+        "end": 51200
+      },
+      {
+        "source": "--> src/device/sliding/rope.rs:21:61",
+        "type": "DmaGather",
+        "count": 1,
+        "duration_sum": 934,
+        "durations": [
+          934
+        ],
+        "begin": 32410,
+        "end": 33344
+      },
+      {
+        "source": "--> src/device/sliding/rope.rs:24:75",
+        "type": "DmaStos",
+        "count": 1,
+        "duration_sum": 362,
+        "durations": [
+          362
+        ],
+        "begin": 33344,
+        "end": 33706
+      },
+      {
+        "source": "--> src/device/sliding/rope.rs:27:79",
+        "type": "Sub",
+        "count": 1,
+        "duration_sum": 327,
+        "durations": [
+          327
+        ],
+        "begin": 33706,
+        "end": 34033
+      },
+      {
+        "source": "--> src/device/sliding/projection.rs:85:77",
+        "type": "DmaLoad",
+        "count": 2,
+        "duration_sum": 27024,
+        "durations": [
+          13512
+        ],
+        "begin": 33709,
+        "end": 65223
+      },
+      {
+        "source": "--> src/device/sliding/projection.rs:49:73",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 285,
+        "durations": [
+          285
+        ],
+        "begin": 40991,
+        "end": 41276
+      },
+      {
+        "source": "--> src/device/sliding/projection.rs:65:64",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 1032,
+        "durations": [
+          1032
+        ],
+        "begin": 41276,
+        "end": 42308
+      },
+      {
+        "source": "--> src/device/sliding/rmsnorm.rs:15:72",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 1304,
+        "durations": [
+          1304
+        ],
+        "begin": 42308,
+        "end": 43612
+      },
+      {
+        "source": "--> src/device/sliding/rmsnorm.rs:35:64",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 285,
+        "durations": [
+          285
+        ],
+        "begin": 43612,
+        "end": 43897
+      },
+      {
+        "source": "--> src/device/sliding/rmsnorm.rs:51:69",
+        "type": "Sub",
+        "count": 1,
+        "duration_sum": 271,
+        "durations": [
+          271
+        ],
+        "begin": 43897,
+        "end": 44168
+      },
+      {
+        "source": "--> src/device/sliding/rmsnorm.rs:58:5",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 1305,
+        "durations": [
+          1305
+        ],
+        "begin": 44168,
+        "end": 45473
+      },
+      {
+        "source": "--> src/device/sliding/rope.rs:43:84",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 2311,
+        "durations": [
+          2311
+        ],
+        "begin": 45473,
+        "end": 47784
+      },
+      {
+        "source": "--> src/device/sliding/rope.rs:69:77",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 296,
+        "durations": [
+          296
+        ],
+        "begin": 47784,
+        "end": 48080
+      },
+      {
+        "source": "--> src/device/sliding/rope.rs:22:61",
+        "type": "DmaGather",
+        "count": 1,
+        "duration_sum": 934,
+        "durations": [
+          934
+        ],
+        "begin": 48059,
+        "end": 48993
+      },
+      {
+        "source": "--> src/device/sliding/rope.rs:90:5",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 280,
+        "durations": [
+          280
+        ],
+        "begin": 48159,
+        "end": 48439
+      },
+      {
+        "source": "--> src/device/sliding/rope.rs:90:5",
+        "type": "Core",
+        "count": 1,
+        "duration_sum": 6,
+        "durations": [
+          6
+        ],
+        "begin": 48439,
+        "end": 48445
+      },
+      {
+        "source": "--> src/device/sliding/rope.rs:101:5",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 280,
+        "durations": [
+          280
+        ],
+        "begin": 48518,
+        "end": 48798
+      },
+      {
+        "source": "--> src/device/sliding/rope.rs:131:80",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 409,
+        "durations": [
+          409
+        ],
+        "begin": 48798,
+        "end": 49207
+      },
+      {
+        "source": "--> src/device/sliding/rope.rs:101:5",
+        "type": "Core",
+        "count": 1,
+        "duration_sum": 6,
+        "durations": [
+          6
+        ],
+        "begin": 48798,
+        "end": 48804
+      },
+      {
+        "source": "--> src/device/sliding/rope.rs:25:75",
+        "type": "DmaStos",
+        "count": 1,
+        "duration_sum": 362,
+        "durations": [
+          362
+        ],
+        "begin": 48998,
+        "end": 49360
+      },
+      {
+        "source": "--> src/device/sliding/projection.rs:86:74",
+        "type": "Main",
+        "count": 2,
+        "duration_sum": 10126,
+        "durations": [
+          5063
+        ],
+        "begin": 49431,
+        "end": 70286
+      },
+      {
+        "source": "--> src/device/sliding/rope.rs:35:79",
+        "type": "Sub",
+        "count": 1,
+        "duration_sum": 327,
+        "durations": [
+          327
+        ],
+        "begin": 49431,
+        "end": 49758
+      },
+      {
+        "source": "--> src/device/sliding/projection.rs:101:75",
+        "type": "DmaLoad",
+        "count": 2,
+        "duration_sum": 1584,
+        "durations": [
+          792
+        ],
+        "begin": 49631,
+        "end": 66015
+      },
+      {
+        "source": "--> src/device/sliding/projection.rs:102:79",
+        "type": "Sub",
+        "count": 2,
+        "duration_sum": 530,
+        "durations": [
+          265
+        ],
+        "begin": 50423,
+        "end": 66280
+      },
+      {
+        "source": "--> src/device/sliding/projection.rs:110:69",
+        "type": "Main",
+        "count": 2,
+        "duration_sum": 566,
+        "durations": [
+          283
+        ],
+        "begin": 54494,
+        "end": 70569
+      },
+      {
+        "source": "--> src/device/sliding/projection.rs:126:5",
+        "type": "Main",
+        "count": 2,
+        "duration_sum": 2064,
+        "durations": [
+          1032
+        ],
+        "begin": 54777,
+        "end": 71604
+      },
+      {
+        "source": "--> src/device/sliding/rmsnorm.rs:93:68",
+        "type": "Main",
+        "count": 2,
+        "duration_sum": 1584,
+        "durations": [
+          792
+        ],
+        "begin": 55809,
+        "end": 72396
+      },
+      {
+        "source": "--> src/device/sliding/rmsnorm.rs:113:60",
+        "type": "Main",
+        "count": 2,
+        "duration_sum": 566,
+        "durations": [
+          283
+        ],
+        "begin": 56601,
+        "end": 72679
+      },
+      {
+        "source": "--> src/device/sliding/rope.rs:146:80",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 409,
+        "durations": [
+          409
+        ],
+        "begin": 56884,
+        "end": 57293
+      },
+      {
+        "source": "--> src/device/sliding/rmsnorm.rs:127:5",
+        "type": "Sub",
+        "count": 2,
+        "duration_sum": 534,
+        "durations": [
+          267
+        ],
+        "begin": 56884,
+        "end": 72946
+      },
+      {
+        "source": "--> src/device/sliding/rmsnorm.rs:140:5",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 793,
+        "durations": [
+          793
+        ],
+        "begin": 57293,
+        "end": 58086
+      },
+      {
+        "source": "--> src/device/sliding/rope.rs:161:85",
+        "type": "Sub",
+        "count": 1,
+        "duration_sum": 519,
+        "durations": [
+          519
+        ],
+        "begin": 57293,
+        "end": 57812
+      },
+      {
+        "source": "--> src/device/sliding/rope.rs:56:80",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 1287,
+        "durations": [
+          1287
+        ],
+        "begin": 58086,
+        "end": 59373
+      },
+      {
+        "source": "--> src/device/sliding/rope.rs:77:73",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 280,
+        "durations": [
+          280
+        ],
+        "begin": 59373,
+        "end": 59653
+      },
+      {
+        "source": "--> src/device/sliding/rope.rs:117:5",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 272,
+        "durations": [
+          272
+        ],
+        "begin": 59732,
+        "end": 60004
+      },
+      {
+        "source": "--> src/device/sliding/rope.rs:117:5",
+        "type": "Core",
+        "count": 1,
+        "duration_sum": 6,
+        "durations": [
+          6
+        ],
+        "begin": 60004,
+        "end": 60010
+      },
+      {
+        "source": "--> src/device/sliding/rope.rs:124:5",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 272,
+        "durations": [
+          272
+        ],
+        "begin": 60083,
+        "end": 60355
+      },
+      {
+        "source": "--> src/device/sliding/rope.rs:124:5",
+        "type": "Core",
+        "count": 1,
+        "duration_sum": 6,
+        "durations": [
+          6
+        ],
+        "begin": 60355,
+        "end": 60361
+      },
+      {
+        "source": "--> src/device/sliding/rope.rs:196:76",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 345,
+        "durations": [
+          345
+        ],
+        "begin": 60355,
+        "end": 60700
+      },
+      {
+        "source": "--> src/device/sliding/rope.rs:168:84",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 345,
+        "durations": [
+          345
+        ],
+        "begin": 60700,
+        "end": 61045
+      },
+      {
+        "source": "--> src/device/sliding/rope.rs:211:81",
+        "type": "Sub",
+        "count": 1,
+        "duration_sum": 391,
+        "durations": [
+          391
+        ],
+        "begin": 60700,
+        "end": 61091
+      },
+      {
+        "source": "--> src/device/sliding/rope.rs:181:76",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 345,
+        "durations": [
+          345
+        ],
+        "begin": 61045,
+        "end": 61390
+      },
+      {
+        "source": "--> src/device/sliding/rope.rs:218:80",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 313,
+        "durations": [
+          313
+        ],
+        "begin": 61390,
+        "end": 61703
+      },
+      {
+        "source": "--> src/device/sliding/rope.rs:240:70",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 392,
+        "durations": [
+          392
+        ],
+        "begin": 61703,
+        "end": 62095
+      },
+      {
+        "source": "--> src/device/sliding/rope.rs:231:74",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 520,
+        "durations": [
+          520
+        ],
+        "begin": 62095,
+        "end": 62615
+      },
+      {
+        "source": "--> src/ops.rs:73:5",
+        "type": "DmaStore",
+        "count": 1,
+        "duration_sum": 441,
+        "durations": [
+          441
+        ],
+        "begin": 66015,
+        "end": 66456
+      },
+      {
+        "source": "--> src/ops.rs:74:5",
+        "type": "DmaScatter",
+        "count": 1,
+        "duration_sum": 870,
+        "durations": [
+          870
+        ],
+        "begin": 66456,
+        "end": 67326
+      },
+      {
+        "source": "--> src/device/sliding/rmsnorm.rs:162:5",
+        "type": "Main",
+        "count": 1,
+        "duration_sum": 793,
+        "durations": [
+          793
+        ],
+        "begin": 72946,
+        "end": 73739
+      },
+      {
+        "source": "--> src/ops.rs:69:5",
+        "type": "DmaScatter",
+        "count": 1,
+        "duration_sum": 870,
+        "durations": [
+          870
+        ],
+        "begin": 73739,
+        "end": 74609
+      }
+    ],
+    "largest_sram_tensors": [
+      {
+        "name": "vISA(T187)_i1_project_query_31",
+        "index": "39",
+        "buffer_type": "Sram",
+        "lifetime": {
+          "begin": 4653,
+          "end": 40991,
+          "block_begin": 0,
+          "block_end": 0
+        },
+        "address": 33554432,
+        "size": 31457280,
+        "physical_pages": [
+          1,
+          2
+        ],
+        "shape": "MappingShape[Chip: 1, Cluster: 1 # 2, Slice: Qs / 16, Element: (Qs % 16, H)]",
+        "fingerprint": null
+      },
+      {
+        "name": "vISA(T201)_i3_project_one_kv_matrix_22",
+        "index": "58",
+        "buffer_type": "Sram",
+        "lifetime": {
+          "begin": 33709,
+          "end": 54494,
+          "block_begin": 0,
+          "block_end": 0
+        },
+        "address": 67108864,
+        "size": 15728640,
+        "physical_pages": [
+          3
+        ],
+        "shape": "MappingShape[Chip: 1, Cluster: 1 # 2, Slice: Ps / 8, Element: (Ps % 8, H)]",
+        "fingerprint": null
+      },
+      {
+        "name": "vISA(T211)_i4_project_one_kv_matrix_22",
+        "index": "95",
+        "buffer_type": "Sram",
+        "lifetime": {
+          "begin": 51711,
+          "end": 70286,
+          "block_begin": 0,
+          "block_end": 0
+        },
+        "address": 33554432,
+        "size": 15728640,
+        "physical_pages": [
+          1
+        ],
+        "shape": "MappingShape[Chip: 1, Cluster: 1 # 2, Slice: Ps / 8, Element: (Ps % 8, H)]",
+        "fingerprint": null
+      },
+      {
+        "name": "",
+        "index": "72",
+        "buffer_type": "Sram",
+        "lifetime": {
+          "begin": 48059,
+          "end": 54494,
+          "block_begin": 0,
+          "block_end": 0
+        },
+        "address": 23068672,
+        "size": 8388608,
+        "physical_pages": [
+          2
+        ],
+        "shape": "",
+        "fingerprint": null
+      },
+      {
+        "name": "",
+        "index": "44",
+        "buffer_type": "Sram",
+        "lifetime": {
+          "begin": 6566,
+          "end": 40991,
+          "block_begin": 0,
+          "block_end": 0
+        },
+        "address": 5636096,
+        "size": 8388608,
+        "physical_pages": [
+          0
+        ],
+        "shape": "",
+        "fingerprint": null
+      },
+      {
+        "name": "",
+        "index": "94",
+        "buffer_type": "Sram",
+        "lifetime": {
+          "begin": 51711,
+          "end": 70286,
+          "block_begin": 0,
+          "block_end": 0
+        },
+        "address": 1179648,
+        "size": 8388608,
+        "physical_pages": [
+          0
+        ],
+        "shape": "",
+        "fingerprint": null
+      },
+      {
+        "name": "output",
+        "index": "61",
+        "buffer_type": "Sram",
+        "lifetime": {
+          "begin": 41276,
+          "end": 42308,
+          "block_begin": 0,
+          "block_end": 0
+        },
+        "address": 5505024,
+        "size": 4194304,
+        "physical_pages": [
+          0
+        ],
+        "shape": "MappingShape[Chip: 1, Cluster: 1 # 2, Slice: 1 # 256, Element: Qs]",
+        "fingerprint": null
+      },
+      {
+        "name": "vISA(T311)_69",
+        "index": "123",
+        "buffer_type": "Sram",
+        "lifetime": {
+          "begin": 62095,
+          "end": 66456,
+          "block_begin": 0,
+          "block_end": 0
+        },
+        "address": 25952256,
+        "size": 4194304,
+        "physical_pages": [
+          2
+        ],
+        "shape": "MappingShape[Chip: 1, Cluster: 1 # 2, Slice: 1 # 256, Element: (Ns, Gs, Ds)]",
+        "fingerprint": null
+      }
+    ]
+  }
+}
